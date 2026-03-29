@@ -1,8 +1,8 @@
 from config.application import create_app
-from config.admin import create_admin
+from config.dashboard import dashboard
 
 app = create_app()
-admin = create_admin(app)
+dashboard(app)
 
 if __name__ == '__main__':
   app.run()

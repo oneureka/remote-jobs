@@ -784,6 +784,27 @@ url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 reference = "main"
 
 [[package]]
+name = "wtf-peewee"
+version = "3.1.0"
+description = "wtforms integration for peewee"
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "wtf_peewee-3.1.0-py3-none-any.whl", hash = "sha256:0e05d274ca5a194fb7c11a5bfeb41bf1f7ff2861ba436cb7fbee966e8b824e82"},
+    {file = "wtf_peewee-3.1.0.tar.gz", hash = "sha256:636795565d138392b5230de513a89cc6ad0024a76a7c806ddb4c107523b5f41a"},
+]
+
+[package.dependencies]
+peewee = ">=3.0.0"
+wtforms = "*"
+
+[package.source]
+type = "legacy"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+reference = "main"
+
+[[package]]
 name = "wtforms"
 version = "3.2.1"
 description = "Form validation and rendering for Python web development."
@@ -809,4 +830,4 @@ reference = "main"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.14"
-content-hash = "b37b417a19cd55423e586792f059b2020003422610d7c3766b924f1a06b0dfe7"
+content-hash = "d1f07c4bd22f97279e615115da6284b26c02ef90464a5cc0c24c1b60b27e513e"
