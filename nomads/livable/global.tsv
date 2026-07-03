@@ -1,0 +1,51 @@
+City	Country	Region	Avg. AQI	Temp Range	Cost Tier	Min. Wage
+Copenhagen	Denmark	Europe	20	0°C~22°C	High	DKK 110/hr (~DKK 18K/mo)†
+Vienna	Austria	Europe	25	-1°C~26°C	High	€2,000/mo†
+Osaka	Japan	Asia	35	3°C~33°C	High	¥1,004/hr (~¥160K/mo)
+Auckland	New Zealand	Oceania	15	10°C~25°C	High	NZ$23.15/hr (~NZ$3.7K/mo)
+Adelaide	Australia	Oceania	25	8°C~30°C	Medium	AU$24.10/hr (~AU$3.9K/mo)
+Vancouver	Canada	North America	25	2°C~22°C	High	C$17.40/hr (~C$2.8K/mo)
+Luxembourg City	Luxembourg	Europe	20	0°C~24°C	High	€2,570/mo
+Toronto	Canada	North America	30	-7°C~27°C	High	C$17.20/hr (~C$2.8K/mo)
+Brisbane	Australia	Oceania	20	15°C~29°C	Medium	AU$24.10/hr (~AU$3.9K/mo)
+Tokyo	Japan	Asia	30	3°C~31°C	High	¥1,041/hr (~¥165K/mo)
+Perth	Australia	Oceania	25	8°C~32°C	Medium	AU$24.10/hr (~AU$3.9K/mo)
+Amsterdam	Netherlands	Europe	20	2°C~22°C	High	€13.68/hr (~€2.4K/mo)
+Munich	Germany	Europe	25	-2°C~25°C	High	€12.82/hr (~€2.2K/mo)
+Stockholm	Sweden	Europe	15	-5°C~23°C	High	SEK 130/hr (~SEK 22K/mo)†
+Berlin	Germany	Europe	25	-1°C~25°C	Medium	€12.82/hr (~€2.2K/mo)
+Dublin	Ireland	Europe	20	4°C~19°C	High	€13.50/hr (~€2.4K/mo)
+Frankfurt	Germany	Europe	25	0°C~26°C	High	€12.82/hr (~€2.2K/mo)
+Hamburg	Germany	Europe	25	0°C~23°C	Medium	€12.82/hr (~€2.2K/mo)
+Madrid	Spain	Europe	30	2°C~32°C	High	€1,134/mo
+Barcelona	Spain	Europe	30	8°C~28°C	High	€1,134/mo
+Lisbon	Portugal	Europe	25	8°C~28°C	Medium	€956/mo
+Milan	Italy	Europe	35	1°C~30°C	High	€1,200/mo†
+Rome	Italy	Europe	30	3°C~31°C	High	€1,200/mo†
+Seattle	United States	North America	25	4°C~25°C	High	$19.97/hr (~$3,200/mo)
+Washington D.C.	United States	North America	35	-1°C~31°C	High	$17.50/hr (~$2,800/mo)
+Edinburgh	United Kingdom	Europe	15	1°C~19°C	Medium	£11.44/hr (~£1.9K/mo)
+The Hague	Netherlands	Europe	20	2°C~22°C	High	€13.68/hr (~€2.4K/mo)
+Kyoto	Japan	Asia	30	2°C~32°C	High	¥1,004/hr (~¥160K/mo)
+Boston	United States	North America	30	-5°C~28°C	High	$15.00/hr (~$2,400/mo)
+Porto	Portugal	Europe	25	5°C~25°C	Low	€956/mo
+Düsseldorf	Germany	Europe	25	1°C~24°C	Medium	€12.82/hr (~€2.2K/mo)
+Valencia	Spain	Europe	25	8°C~30°C	Medium	€1,134/mo
+Wellington	New Zealand	Oceania	15	8°C~20°C	Medium	NZ$23.15/hr (~NZ$3.7K/mo)
+Honolulu	United States	North America	25	20°C~30°C	High	$14.00/hr (~$2,240/mo)
+Denver	United States	North America	40	-7°C~32°C	Medium	$14.42/hr (~$2,300/mo)
+Seoul	South Korea	Asia	55	-5°C~30°C	High	₩9,860/hr (~₩2.1M/mo)
+Portland	United States	North America	30	3°C~28°C	Medium	$15.95/hr (~$2,550/mo)
+Miami	United States	North America	35	16°C~32°C	High	$12.00/hr (~$1,920/mo)
+Atlanta	United States	North America	45	2°C~32°C	Medium	$7.25/hr (~$1,160/mo)
+Houston	United States	North America	45	6°C~35°C	Medium	$7.25/hr (~$1,160/mo)
+Kuala Lumpur	Malaysia	Asia	45	24°C~33°C	Low	RM1,500/mo
+Taipei	Taiwan	Asia	40	15°C~30°C	Medium	NT$28,590/mo
+Bangkok	Thailand	Asia	55	26°C~35°C	Low	฿350/day (~฿10,500/mo)
+Chiang Mai	Thailand	Asia	40	18°C~36°C	Very Low	฿350/day (~฿10,500/mo)
+Bali (Denpasar)	Indonesia	Asia	45	24°C~32°C	Low	Rp2.5M/mo
+Bandung	Indonesia	Asia	50	19°C~28°C	Very Low	Rp2.2M/mo
+Chengdu	China	Asia	55	5°C~30°C	Low	¥2,100/mo
+Shanghai	China	Asia	45	3°C~32°C	Medium	¥2,690/mo
+Hanoi	Vietnam	Asia	55	14°C~33°C	Very Low	₫4.42M/mo
+Ho Chi Minh City	Vietnam	Asia	50	25°C~35°C	Very Low	₫4.42M/mo
