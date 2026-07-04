@@ -1,7 +1,7 @@
 ---
 companyName: LogRocket
 remotePolicy: ['Hybrid']
-industry: 'Software Analytics / Frontend Monitoring'
+industry: ['Software Analytics', 'Frontend Monitoring']
 website: https://logrocket.com
 region: North America
 ---

@@ -1,7 +1,7 @@
 ---
 companyName: 1Password
 remotePolicy: ['Remote']
-industry: 'Identity Security'
+industry: ['Identity Security', 'Password Manager']
 website: https://1password.com
 region: North America
 ---

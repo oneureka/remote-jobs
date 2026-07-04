@@ -1,7 +1,7 @@
 ---
 companyName: Tailscale
 remotePolicy: ['Remote']
-industry: 'Network Security'
+industry: ['Network Security', 'Zero Trust']
 website: https://tailscale.com
 region: North America
 ---

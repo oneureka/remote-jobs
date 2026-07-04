@@ -1,7 +1,7 @@
 ---
 companyName: Bitwarden
 remotePolicy: ['Remote']
-industry: 'Password Management'
+industry: ['Password Management', 'Security']
 website: https://bitwarden.com
 region: North America
 ---

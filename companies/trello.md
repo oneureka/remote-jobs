@@ -1,7 +1,7 @@
 ---
 companyName: Trello
 remotePolicy: ['Remote']
-industry: 'Project Management Software'
+industry: ['Project Management Software']
 website: https://trello.com
 region: North America
 ---

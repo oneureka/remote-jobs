@@ -1,7 +1,7 @@
 ---
 companyName: Evil Martians
 remotePolicy: ['Remote']
-industry: 'Product Development Consultancy'
+industry: ['Product Development Consultancy']
 website: https://evilmartians.com
 region: North America
 ---

@@ -1,7 +1,7 @@
 ---
 companyName: Netlify
 remotePolicy: ['Remote']
-industry: 'Cloud Computing, Web Development'
+industry: ['Cloud Computing', 'Web Development']
 website: https://netlify.com
 region: North America
 ---

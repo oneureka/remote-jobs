@@ -1,7 +1,7 @@
 ---
 companyName: Strapi
 remotePolicy: ['Remote']
-industry: 'Content Management'
+industry: ['Content Management', 'CMS']
 website: https://strapi.io
 region: Europe
 ---

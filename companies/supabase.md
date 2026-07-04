@@ -1,7 +1,7 @@
 ---
 companyName: Supabase
 remotePolicy: ['Remote']
-industry: 'Backend Platform'
+industry: ['Backend Platform', 'Database']
 website: https://supabase.com
 region: North America
 ---

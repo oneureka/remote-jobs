@@ -1,7 +1,7 @@
 ---
 companyName: Discord
 remotePolicy: ['Hybrid']
-industry: 'Communication Software'
+industry: ['Communication Software']
 website: https://discord.com
 region: North America
 ---

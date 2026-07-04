@@ -1,7 +1,7 @@
 ---
 companyName: DigitalOcean
 remotePolicy: ['Remote', 'Hybrid']
-industry: 'Cloud Computing'
+industry: ['Cloud Computing']
 website: https://digitalocean.com
 region: North America
 ---

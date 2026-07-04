@@ -1,7 +1,7 @@
 ---
 companyName: Resend
 remotePolicy: ['Remote']
-industry: 'Developer Tools'
+industry: ['Developer Tools', 'Email API']
 website: https://resend.com
 region: North America
 ---

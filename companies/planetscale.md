@@ -1,7 +1,7 @@
 ---
 companyName: PlanetScale
 remotePolicy: ['Remote']
-industry: 'Database, Cloud Infrastructure'
+industry: ['Database', 'Cloud Infrastructure']
 website: https://planetscale.com
 region: North America
 ---

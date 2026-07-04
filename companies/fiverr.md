@@ -1,7 +1,7 @@
 ---
 companyName: Fiverr
 remotePolicy: ['Hybrid']
-industry: 'Freelance Services Marketplace'
+industry: ['Freelance Marketplace']
 website: https://fiverr.com
 region: Asia
 ---

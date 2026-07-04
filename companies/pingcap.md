@@ -1,7 +1,7 @@
 ---
 companyName: PingCAP
 remotePolicy: ['Remote']
-industry: 'Open-source Database, Infrastructure'
+industry: ['Database', 'Infrastructure']
 website: https://pingcap.com
 region: North America
 ---

@@ -1,7 +1,7 @@
 ---
 companyName: OpenRouter
 remotePolicy: ['Remote']
-industry: 'AI Infrastructure'
+industry: ['AI Infrastructure']
 website: https://openrouter.ai
 region: North America
 ---

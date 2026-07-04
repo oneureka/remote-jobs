@@ -1,7 +1,7 @@
 ---
 companyName: Hugging Face
 remotePolicy: ['Remote']
-industry: 'Artificial Intelligence / Machine Learning'
+industry: ['Artificial Intelligence', 'Machine Learning']
 website: https://huggingface.co
 region: North America
 ---

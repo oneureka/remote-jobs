@@ -1,7 +1,7 @@
 ---
 companyName: 37signals
 remotePolicy: ['Remote']
-industry: 'Web Software'
+industry: ['Web Software']
 website: https://37signals.com
 region: North America
 ---

@@ -1,7 +1,7 @@
 ---
 companyName: Railway
 remotePolicy: ['Remote']
-industry: 'Cloud Infrastructure, Developer Tools'
+industry: ['Cloud Infrastructure', 'Developer Tools']
 website: https://railway.app
 region: North America
 ---

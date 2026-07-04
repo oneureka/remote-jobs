@@ -1,7 +1,7 @@
 ---
 companyName: Brave
 remotePolicy: ['Remote']
-industry: 'Internet Software'
+industry: ['Internet Software', 'Browser']
 website: https://brave.com
 region: North America
 ---

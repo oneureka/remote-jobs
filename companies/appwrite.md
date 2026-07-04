@@ -1,7 +1,7 @@
 ---
 companyName: Appwrite
 remotePolicy: ['Remote']
-industry: 'Backend-as-a-Service'
+industry: ['Backend-as-a-Service', 'Developer Tools']
 website: https://appwrite.io
 region: Asia
 ---

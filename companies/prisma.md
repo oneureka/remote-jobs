@@ -1,7 +1,7 @@
 ---
 companyName: Prisma
 remotePolicy: ['Remote']
-industry: 'Developer Tools, Database'
+industry: ['Developer Tools', 'Database']
 website: https://prisma.io
 region: Europe
 ---

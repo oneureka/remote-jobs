@@ -1,7 +1,7 @@
 ---
 companyName: HTTPie
 remotePolicy: ['Remote']
-industry: 'Developer Tools / API Development'
+industry: ['Developer Tools', 'API Development']
 website: https://httpie.io
 region: North America
 ---

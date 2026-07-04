@@ -1,7 +1,7 @@
 ---
 companyName: Fly.io
 remotePolicy: ['Remote']
-industry: 'Cloud Computing Platform'
+industry: ['Cloud Computing', 'Platform-as-a-Service']
 website: https://fly.io
 region: North America
 ---

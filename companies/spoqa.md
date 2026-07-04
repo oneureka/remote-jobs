@@ -1,7 +1,7 @@
 ---
 companyName: Spoqa
 remotePolicy: ['Remote']
-industry: 'Food Technology'
+industry: ['Food Technology']
 website: https://spoqa.com
 region: Asia
 ---

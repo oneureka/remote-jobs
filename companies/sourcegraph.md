@@ -1,7 +1,7 @@
 ---
 companyName: Sourcegraph
 remotePolicy: ['Remote']
-industry: 'Developer Tools'
+industry: ['Developer Tools', 'Code Intelligence']
 website: https://sourcegraph.com
 region: North America
 ---

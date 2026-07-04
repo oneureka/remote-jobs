@@ -1,7 +1,7 @@
 ---
 companyName: CoreOS
 remotePolicy: ['On-site']
-industry: 'Open Source Infrastructure'
+industry: ['Cloud Infrastructure', 'Container Orchestration']
 website: https://coreos.com
 region: North America
 ---

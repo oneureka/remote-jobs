@@ -1,7 +1,7 @@
 ---
 companyName: Canonical
 remotePolicy: ['Remote']
-industry: 'Open Source Software'
+industry: ['Open Source Software', 'Linux']
 website: https://canonical.com
 region: Europe
 ---

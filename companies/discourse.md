@@ -1,7 +1,7 @@
 ---
 companyName: Discourse
 remotePolicy: ['Remote']
-industry: 'Community Software'
+industry: ['Community Software']
 website: https://discourse.org
 region: North America
 ---

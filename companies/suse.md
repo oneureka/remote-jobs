@@ -1,7 +1,7 @@
 ---
 companyName: SUSE
 remotePolicy: ['Remote', 'Hybrid']
-industry: 'Enterprise Open Source'
+industry: ['Enterprise Open Source', 'Linux']
 website: https://suse.com
 region: Europe
 ---

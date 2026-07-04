@@ -1,7 +1,7 @@
 ---
 companyName: Epic Games
 remotePolicy: ['Hybrid']
-industry: 'Interactive Entertainment'
+industry: ['Interactive Entertainment', 'Gaming']
 website: https://epicgames.com
 region: North America
 ---

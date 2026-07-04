@@ -1,7 +1,7 @@
 ---
 companyName: Render
 remotePolicy: ['Remote']
-industry: 'Cloud Computing'
+industry: ['Cloud Computing']
 website: https://render.com
 region: North America
 ---

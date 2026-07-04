@@ -1,7 +1,7 @@
 ---
 companyName: Primer
 remotePolicy: ['Remote']
-industry: 'Fintech, Payments Infrastructure'
+industry: ['Fintech', 'Payments']
 website: https://primer.io
 region: Europe
 ---

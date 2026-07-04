@@ -1,7 +1,7 @@
 ---
 companyName: LINE Plus
 remotePolicy: ['Hybrid']
-industry: 'Technology / Mobile Platform'
+industry: ['Messaging', 'Social Platform']
 website: https://linepluscorp.com
 region: Asia
 ---

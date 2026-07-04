@@ -1,7 +1,7 @@
 ---
 companyName: Buffer
 remotePolicy: ['Remote']
-industry: 'Social Media Management'
+industry: ['Social Media Management']
 website: https://buffer.com
 region: North America
 ---

@@ -1,7 +1,7 @@
 ---
 companyName: IPinfo
 remotePolicy: ['Remote']
-industry: 'Internet Data / IP Intelligence'
+industry: ['IP Intelligence', 'Data Services']
 website: https://ipinfo.io
 region: North America
 ---

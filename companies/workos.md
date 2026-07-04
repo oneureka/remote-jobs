@@ -1,7 +1,7 @@
 ---
 companyName: WorkOS
 remotePolicy: ['Remote']
-industry: 'Enterprise Software'
+industry: ['Enterprise Software', 'Developer Tools']
 website: https://workos.com
 region: North America
 ---

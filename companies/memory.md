@@ -1,7 +1,7 @@
 ---
 companyName: Memory
 remotePolicy: ['Remote']
-industry: 'Artificial Intelligence, Productivity Software'
+industry: ['Artificial Intelligence', 'Productivity Software']
 website: https://memory.ai
 region: Europe
 ---

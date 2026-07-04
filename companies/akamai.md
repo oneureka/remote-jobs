@@ -1,7 +1,7 @@
 ---
 companyName: Akamai
 remotePolicy: ['Remote', 'Hybrid']
-industry: 'Cloud Computing & Cybersecurity'
+industry: ['Cloud Computing', 'Security', 'Content Delivery']
 website: https://www.akamai.com
 region: North America
 ---

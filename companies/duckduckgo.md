@@ -1,7 +1,7 @@
 ---
 companyName: DuckDuckGo
 remotePolicy: ['Remote']
-industry: 'Internet Privacy and Search'
+industry: ['Internet Privacy', 'Search']
 website: https://duckduckgo.com
 region: North America
 ---

@@ -1,7 +1,7 @@
 ---
 companyName: Basecamp
 remotePolicy: ['Remote']
-industry: 'Project Management Software'
+industry: ['Project Management Software']
 website: https://basecamp.com
 region: North America
 ---

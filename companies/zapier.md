@@ -1,7 +1,7 @@
 ---
 companyName: Zapier
 remotePolicy: ['Remote']
-industry: 'Automation Platform'
+industry: ['Automation Platform']
 website: https://zapier.com
 region: North America
 ---

@@ -1,7 +1,7 @@
 ---
 companyName: Linear
 remotePolicy: ['Remote']
-industry: 'Developer Tools / Project Management'
+industry: ['Project Management', 'Developer Tools']
 website: https://linear.app
 region: North America
 ---

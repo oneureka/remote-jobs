@@ -1,7 +1,7 @@
 ---
 companyName: Hugo
 remotePolicy: ['Remote']
-industry: 'Static Site Generator / Web Development'
+industry: ['Static Site Generator', 'Web Development']
 website: https://gohugo.io
 region: North America
 ---

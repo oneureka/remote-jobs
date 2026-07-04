@@ -1,7 +1,7 @@
 ---
 companyName: Deno
 remotePolicy: ['Remote']
-industry: 'Developer Tools'
+industry: ['Developer Tools', 'Runtime']
 website: https://deno.com
 region: North America
 ---

@@ -1,7 +1,7 @@
 ---
 companyName: Anomaly
 remotePolicy: ['Remote']
-industry: 'Developer Tools'
+industry: ['Developer Tools', 'AI']
 website: https://anoma.ly
 region: North America
 ---

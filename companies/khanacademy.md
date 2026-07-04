@@ -1,7 +1,7 @@
 ---
 companyName: Khan Academy
 remotePolicy: ['Remote-Friendly']
-industry: 'Education Technology'
+industry: ['Education Technology']
 website: https://khanacademy.org
 region: North America
 ---

@@ -1,7 +1,7 @@
 ---
 companyName: DNSimple
 remotePolicy: ['Remote']
-industry: 'DNS Hosting and Domain Management'
+industry: ['DNS Hosting', 'Domain Management']
 website: https://dnsimple.com
 region: North America
 ---

@@ -1,7 +1,7 @@
 ---
 companyName: Vercel
 remotePolicy: ['Remote', 'Hybrid']
-industry: 'Cloud Infrastructure'
+industry: ['Cloud Infrastructure', 'Developer Tools']
 website: https://vercel.com
 region: North America
 ---

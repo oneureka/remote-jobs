@@ -1,7 +1,7 @@
 ---
 companyName: CodePen
 remotePolicy: ['Remote']
-industry: 'Software Development'
+industry: ['Developer Tools', 'Web Development']
 website: https://codepen.io
 region: North America
 ---

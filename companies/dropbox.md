@@ -1,7 +1,7 @@
 ---
 companyName: Dropbox
 remotePolicy: ['Remote']
-industry: 'Cloud Collaboration'
+industry: ['Cloud Storage', 'Collaboration']
 website: https://dropbox.com
 region: North America
 ---

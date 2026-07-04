@@ -1,7 +1,7 @@
 ---
 companyName: Cal.com
 remotePolicy: ['Remote']
-industry: 'Scheduling Software'
+industry: ['Scheduling Software']
 website: https://cal.com
 region: North America
 ---

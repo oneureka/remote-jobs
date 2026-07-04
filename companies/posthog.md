@@ -1,7 +1,7 @@
 ---
 companyName: PostHog
 remotePolicy: ['Remote']
-industry: 'Product Analytics, Open Source'
+industry: ['Product Analytics', 'Developer Tools']
 website: https://posthog.com
 region: North America
 ---

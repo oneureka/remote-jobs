@@ -1,7 +1,7 @@
 ---
 companyName: Stencil
 remotePolicy: ['Remote']
-industry: 'Developer Tools'
+industry: ['Developer Tools', 'Web Components']
 website: https://stenciljs.com
 region: North America
 ---

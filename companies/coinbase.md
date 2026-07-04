@@ -1,7 +1,7 @@
 ---
 companyName: Coinbase
 remotePolicy: ['Remote']
-industry: 'Cryptocurrency and Financial Services'
+industry: ['Cryptocurrency', 'Fintech']
 website: https://coinbase.com
 region: North America
 ---

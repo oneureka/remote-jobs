@@ -1,7 +1,7 @@
 ---
 companyName: Sketch
 remotePolicy: ['Remote']
-industry: 'Design Software'
+industry: ['Design Software']
 website: https://sketch.com
 region: Europe
 ---

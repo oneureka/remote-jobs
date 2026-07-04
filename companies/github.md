@@ -1,7 +1,7 @@
 ---
 companyName: GitHub
 remotePolicy: ['Hybrid']
-industry: 'Software Development Platform'
+industry: ['Software Development Platform', 'Developer Tools']
 website: https://github.com
 region: North America
 ---
