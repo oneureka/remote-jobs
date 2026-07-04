@@ -1,4 +1,4 @@
-City	Country	Region	Avg. AQI	Temp Range	Cost Tier	Min. Wage
+City	Country	Region	Avg AQI	Temp Range	Cost Tier	Min Wage
 Chiang Mai	Thailand	Asia	40	18°C~36°C	Very Low	฿350/day (~฿10,500/mo)
 Bandung	Indonesia	Asia	50	19°C~28°C	Very Low	Rp2.2M/mo
 Hanoi	Vietnam	Asia	55	14°C~33°C	Very Low	₫4.42M/mo
