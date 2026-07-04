@@ -1,6 +1,6 @@
 ---
 companyName: Khan Academy
-remotePolicy: ['Remote', 'Flexible']
+remotePolicy: ['Remote-Friendly']
 industry: 'Education Technology'
 website: https://khanacademy.org
 region: North America

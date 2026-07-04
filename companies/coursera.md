@@ -1,6 +1,6 @@
 ---
 companyName: Coursera
-remotePolicy: ['Remote', 'Hybrid']
+remotePolicy: ['Remote']
 industry: 'Online Education'
 website: https://coursera.org
 region: North America

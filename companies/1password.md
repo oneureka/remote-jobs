@@ -1,6 +1,6 @@
 ---
 companyName: 1Password
-remotePolicy: ['Remote', 'Flexible']
+remotePolicy: ['Remote']
 industry: 'Identity Security'
 website: https://1password.com
 region: North America

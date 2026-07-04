@@ -1,6 +1,6 @@
 ---
 companyName: HashiCorp
-remotePolicy: ['Remote', 'Flexible']
+remotePolicy: ['Remote']
 industry: 'Cloud Infrastructure / DevOps'
 website: https://hashicorp.com
 region: North America

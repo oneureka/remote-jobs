@@ -1,6 +1,6 @@
 ---
 companyName: SUSE
-remotePolicy: ['Hybrid', 'Remote', 'Flexible']
+remotePolicy: ['Remote', 'Hybrid']
 industry: 'Enterprise Open Source'
 website: https://suse.com
 region: Europe

@@ -1,6 +1,6 @@
 ---
 companyName: Stripe
-remotePolicy: ['Hybrid', 'Remote']
+remotePolicy: ['Remote', 'Hybrid']
 industry: 'Financial Services'
 website: https://stripe.com
 region: North America

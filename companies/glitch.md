@@ -1,6 +1,6 @@
 ---
 companyName: Glitch
-remotePolicy: ['Remote', 'Flexible']
+remotePolicy: ['Remote']
 industry: 'Cloud Development / Web IDE'
 website: https://glitch.com
 region: North America

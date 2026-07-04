@@ -1,6 +1,6 @@
 ---
 companyName: Dropbox
-remotePolicy: ['Remote', 'Hybrid']
+remotePolicy: ['Remote']
 industry: 'Cloud Collaboration'
 website: https://dropbox.com
 region: North America

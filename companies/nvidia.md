@@ -1,6 +1,6 @@
 ---
 companyName: NVIDIA
-remotePolicy: ['Remote', 'Flexible']
+remotePolicy: ['Hybrid']
 industry: 'Semiconductors, Artificial Intelligence'
 website: https://nvidia.com
 region: North America

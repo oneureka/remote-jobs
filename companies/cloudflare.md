@@ -1,6 +1,6 @@
 ---
 companyName: Cloudflare
-remotePolicy: ['Hybrid', 'Remote']
+remotePolicy: ['Remote', 'Hybrid']
 industry: 'Cloud Connectivity and Security'
 website: https://cloudflare.com
 region: North America
