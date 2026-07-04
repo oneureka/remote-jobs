@@ -1,3 +1,11 @@
+---
+companyName: Spoqa
+remotePolicy: ['Remote']
+industry: 'Food Technology'
+website: https://spoqa.com
+region: Asia
+---
+
 # Spoqa
 
 Spoqa makes ingredients easy for restaurant owners by helping them purchase and manage their ingredients in a smarter way through its Kitchenboard platform.
