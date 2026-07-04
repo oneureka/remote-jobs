@@ -1,3 +1,11 @@
+---
+companyName: Dropbox
+remotePolicy: ['Remote', 'Hybrid']
+industry: 'Cloud Collaboration'
+website: https://dropbox.com
+region: North America
+---
+
 # Dropbox
 
 Dropbox is a leading global collaboration platform that's transforming the way people and teams work together, on a mission to design a more enlightened way of working. With more than 700 million registered users across 180 countries, Dropbox helps people be organized, stay focused, and get in sync with their teams.

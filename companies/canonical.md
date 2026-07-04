@@ -1,3 +1,11 @@
+---
+companyName: Canonical
+remotePolicy: ['Remote']
+industry: 'Open Source Software'
+website: https://canonical.com
+region: Europe
+---
+
 # Canonical
 
 Canonical is the publisher of Ubuntu and provides trusted open source software for enterprises. The company offers security, support, and managed services for open source infrastructure, applications, Kubernetes, AI/ML, and IoT devices across the full enterprise stack.

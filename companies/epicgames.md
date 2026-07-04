@@ -1,3 +1,11 @@
+---
+companyName: Epic Games
+remotePolicy: ['Hybrid']
+industry: 'Interactive Entertainment'
+website: https://epicgames.com
+region: North America
+---
+
 # Epic Games
 
 Epic Games is a leading interactive entertainment company and provider of 3D engine technology. Epic operates one of the world's largest games, Fortnite, and develops Unreal Engine, which powers many of the world's leading games and is adopted across industries such as film and television, architecture, automotive, and simulation. Through Fortnite, Unreal Engine, Epic Games Store, and Epic Online Services, Epic provides an end-to-end digital ecosystem for developers and creators.

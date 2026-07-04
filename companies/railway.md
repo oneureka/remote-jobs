@@ -1,3 +1,11 @@
+---
+companyName: Railway
+remotePolicy: ['Remote']
+industry: 'Cloud Infrastructure, Developer Tools'
+website: https://railway.app
+region: North America
+---
+
 # Railway
 
 Railway is an all-in-one intelligent cloud provider that lets developers deploy, network, scale, and monitor applications without infrastructure complexity.

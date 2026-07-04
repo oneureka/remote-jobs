@@ -1,3 +1,11 @@
+---
+companyName: OpenRouter
+remotePolicy: ['Remote']
+industry: 'AI Infrastructure'
+website: https://openrouter.ai
+region: North America
+---
+
 # OpenRouter
 
 Started in early 2023 as the first LLM marketplace, OpenRouter has grown to become the largest and most popular AI gateway. We eliminate vendor lock-in while offering better prices, uptime, and enterprise-grade reliability.

@@ -1,3 +1,11 @@
+---
+companyName: 37signals
+remotePolicy: ['Remote']
+industry: 'Web Software'
+website: https://37signals.com
+region: North America
+---
+
 # 37signals
 
 37signals is an American web software company that makes Basecamp (project management and team communication software) and HEY (a premium email service). The company was co-founded in 1999 by Jason Fried and is the creator of the Ruby on Rails framework.

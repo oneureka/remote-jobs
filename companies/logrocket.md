@@ -1,3 +1,11 @@
+---
+companyName: LogRocket
+remotePolicy: ['Hybrid']
+industry: 'Software Analytics / Frontend Monitoring'
+website: https://logrocket.com
+region: North America
+---
+
 # LogRocket
 
 LogRocket combines session replay, product analytics, and error tracking – empowering software teams to create the ideal product experience.

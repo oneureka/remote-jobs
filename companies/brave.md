@@ -1,3 +1,11 @@
+---
+companyName: Brave
+remotePolicy: ['Remote']
+industry: 'Internet Software'
+website: https://brave.com
+region: North America
+---
+
 # Brave
 
 Brave is an Internet company on a mission to build a user-first Web. Starting with its core browser and search engine, Brave offers a suite of tools that shield users from Big Tech's data vacuum, and keep the Web private, fast, and independent.

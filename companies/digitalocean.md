@@ -1,3 +1,11 @@
+---
+companyName: DigitalOcean
+remotePolicy: ['Remote', 'Hybrid']
+industry: 'Cloud Computing'
+website: https://digitalocean.com
+region: North America
+---
+
 # DigitalOcean
 
 DigitalOcean is the AI-Native Cloud, purpose-built for inference and agentic workloads. DigitalOcean brings infrastructure, core cloud services, inference, data, and agents together in one integrated stack that is open throughout, giving builders the best of the AI ecosystem in one place. Their mission is to simplify cloud and AI so builders can spend more time creating software that changes the world.

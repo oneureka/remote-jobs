@@ -1,3 +1,11 @@
+---
+companyName: DNSimple
+remotePolicy: ['Remote']
+industry: 'DNS Hosting and Domain Management'
+website: https://dnsimple.com
+region: North America
+---
+
 # DNSimple
 
 DNSimple is a DNS hosting provider and domain registrar that delivers simple and secure automation for domain registration, primary DNS hosting, SSL certificates, and more. Their Domain Control Plane provides a single pane of glass for managing domains and DNS across registrars and providers.

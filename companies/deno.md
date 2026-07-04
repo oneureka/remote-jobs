@@ -1,3 +1,11 @@
+---
+companyName: Deno
+remotePolicy: ['Remote']
+industry: 'Developer Tools'
+website: https://deno.com
+region: North America
+---
+
 # Deno
 
 Deno is a fast, open-source, fully Node-compatible JavaScript runtime with TypeScript and everything else you need baked right in. Built on Rust, it provides granular security controls with file system, network, and environment access denied by default. Deno powers millions of projects and is trusted in production by teams at Slack, Netlify, GitHub, Supabase, and Stripe.

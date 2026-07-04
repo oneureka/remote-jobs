@@ -1,3 +1,11 @@
+---
+companyName: IPinfo
+remotePolicy: ['Remote']
+industry: 'Internet Data / IP Intelligence'
+website: https://ipinfo.io
+region: North America
+---
+
 # IPinfo
 
 IPinfo is the internet data company, providing accurate and reliable data products that deliver comprehensive IP intelligence to power our customers' innovations.

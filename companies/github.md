@@ -1,3 +1,11 @@
+---
+companyName: GitHub
+remotePolicy: ['Hybrid']
+industry: 'Software Development Platform'
+website: https://github.com
+region: North America
+---
+
 # GitHub
 
 GitHub is the complete AI-powered developer platform to build, scale, and deliver secure software. It is the home for all developers, hosting over 420M repositories with 180M+ developers, providing version control, collaboration, CI/CD, and code review tools.

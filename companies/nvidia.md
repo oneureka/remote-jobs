@@ -1,3 +1,11 @@
+---
+companyName: NVIDIA
+remotePolicy: ['Remote', 'Flexible']
+industry: 'Semiconductors, Artificial Intelligence'
+website: https://nvidia.com
+region: North America
+---
+
 # NVIDIA
 
 NVIDIA pioneered accelerated computing. Today, our technology powers the world's AI infrastructure, transforming every industry. NVIDIA is a full-stack AI infrastructure company powering the world's AI factories.

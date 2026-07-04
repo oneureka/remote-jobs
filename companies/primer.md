@@ -1,3 +1,11 @@
+---
+companyName: Primer
+remotePolicy: ['Remote']
+industry: 'Fintech, Payments Infrastructure'
+website: https://primer.io
+region: Europe
+---
+
 # Primer
 
 Primer is an AI-powered unified payments infrastructure that allows merchants to optimize every step of the payment journey - from checkout to payout - making payments a source of growth, not just a cost of doing business.

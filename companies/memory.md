@@ -1,3 +1,11 @@
+---
+companyName: Memory
+remotePolicy: ['Remote']
+industry: 'Artificial Intelligence, Productivity Software'
+website: https://memory.ai
+region: Europe
+---
+
 # Memory
 
 Memory is a Norwegian startup that builds tools for the future of work. Its first product, Timely, is the world's first AI-powered automatic time tracking and planning tool.

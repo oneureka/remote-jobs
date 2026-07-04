@@ -1,3 +1,11 @@
+---
+companyName: Linear
+remotePolicy: ['Remote']
+industry: 'Developer Tools / Project Management'
+website: https://linear.app
+region: North America
+---
+
 # Linear
 
 The product development system for teams and agents. Purpose-built for planning and building products. Designed for the AI era.

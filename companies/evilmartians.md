@@ -1,3 +1,11 @@
+---
+companyName: Evil Martians
+remotePolicy: ['Remote']
+industry: 'Product Development Consultancy'
+website: https://evilmartians.com
+region: North America
+---
+
 # Evil Martians
 
 Evil Martians is a product development consultancy for developer tools, helping startups build AI agents, AI-native products, scale infrastructure, and reach product-market fit. They work with ~40 early-stage startups each year, maintain 100+ open source projects with 25B+ total downloads, and help clients go from PoC to MVP to unicorn.

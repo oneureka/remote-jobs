@@ -1,3 +1,11 @@
+---
+companyName: SUSE
+remotePolicy: ['Hybrid', 'Remote', 'Flexible']
+industry: 'Enterprise Open Source'
+website: https://suse.com
+region: Europe
+---
+
 # SUSE
 
 SUSE is a global leader in innovative, reliable and enterprise-grade open source solutions, relied upon by more than 60% of the Fortune 500 to power their mission-critical workloads. We specialize in Enterprise Linux, Kubernetes Management, and Edge solutions.

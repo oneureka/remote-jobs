@@ -1,3 +1,11 @@
+---
+companyName: Sourcegraph
+remotePolicy: ['Remote']
+industry: 'Developer Tools'
+website: https://sourcegraph.com
+region: North America
+---
+
 # Sourcegraph
 
 Sourcegraph is a code intelligence platform that allows developers to rapidly search, write, and understand code by bringing insights from their entire codebase right into their editor. It helps developers and companies with billions of lines of code create the software you use every day. Sourcegraph is an all-remote company, working asynchronously across time zones and continents.

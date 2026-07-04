@@ -1,3 +1,11 @@
+---
+companyName: Bitwarden
+remotePolicy: ['Remote']
+industry: 'Password Management'
+website: https://bitwarden.com
+region: North America
+---
+
 # Bitwarden
 
 Bitwarden equips enterprises and individuals with the power to securely manage and share information online with trusted open source security solutions including password management, secrets management, and passkey innovations. Bitwarden envisions a world where no one gets hacked.

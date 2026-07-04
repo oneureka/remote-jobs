@@ -1,3 +1,11 @@
+---
+companyName: Coinbase
+remotePolicy: ['Remote']
+industry: 'Cryptocurrency and Financial Services'
+website: https://coinbase.com
+region: North America
+---
+
 # Coinbase
 
 Coinbase is on a mission to increase economic freedom in the world. The most trusted crypto platform, Coinbase stores more digital assets than any other company and is building the everything exchange — one place to access crypto, equities, derivatives, prediction markets, and more. Coinbase serves consumers through its suite of financial apps, institutions through Coinbase Prime, and developers through the Coinbase Developer Platform.

@@ -1,3 +1,11 @@
+---
+companyName: Discourse
+remotePolicy: ['Remote']
+industry: 'Community Software'
+website: https://discourse.org
+region: North America
+---
+
 # Discourse
 
 Discourse is the customizable, scalable community platform powering more than 22,000 communities that create knowledge through conversation. Their mission is to give every community the building blocks and tools they need to succeed by providing adaptable infrastructure for communication and collaboration. It is 100% free open source forum software.

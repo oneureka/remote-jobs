@@ -1,3 +1,11 @@
+---
+companyName: HTTPie
+remotePolicy: ['Remote']
+industry: 'Developer Tools / API Development'
+website: https://httpie.io
+region: Europe
+---
+
 # HTTPie
 
 HTTPie is on a mission to make APIs simple and intuitive for all developers. Starting as one of the top open source projects on GitHub, they are building a collaborative, AI-powered platform for API development that focuses on the human experience of working with APIs.

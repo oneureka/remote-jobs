@@ -1,3 +1,11 @@
+---
+companyName: Hugo
+remotePolicy: ['Remote']
+industry: 'Static Site Generator / Web Development'
+website: https://gohugo.io
+region: North America
+---
+
 # Hugo
 
 Hugo is the world's fastest framework for building websites — an open-source static site generator written in Go, optimized for speed and designed for flexibility. With its advanced templating system and fast asset pipelines, Hugo renders complete sites in seconds.

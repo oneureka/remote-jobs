@@ -1,3 +1,11 @@
+---
+companyName: WorkOS
+remotePolicy: ['Remote']
+industry: 'Enterprise Software'
+website: https://workos.com
+region: North America
+---
+
 # WorkOS
 
 WorkOS is a modern API platform that empowers any developer to quickly build and ship complex enterprise features like User Management, Single Sign-On (SAML), Directory Sync (SCIM), and Admin Portal, making applications enterprise-ready with just a few lines of code.

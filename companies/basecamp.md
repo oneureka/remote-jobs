@@ -1,3 +1,11 @@
+---
+companyName: Basecamp
+remotePolicy: ['Remote']
+industry: 'Project Management Software'
+website: https://basecamp.com
+region: North America
+---
+
 # Basecamp
 
 Basecamp is a project management tool that helps businesses manage projects, track feedback, centralize communication, and make progress. It provides a simple, straightforward collection of tools to track work so everyone knows who is doing what.

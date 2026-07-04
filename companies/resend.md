@@ -1,3 +1,11 @@
+---
+companyName: Resend
+remotePolicy: ['Remote']
+industry: 'Developer Tools'
+website: https://resend.com
+region: North America
+---
+
 # Resend
 
 Resend is the email API for developers, enabling them to build, test, and send transactional and marketing emails at scale with a simple, modern API.

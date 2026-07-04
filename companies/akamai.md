@@ -1,3 +1,11 @@
+---
+companyName: Akamai
+remotePolicy: ['Hybrid', 'Remote']
+industry: 'Cloud Computing & Cybersecurity'
+website: https://www.akamai.com
+region: North America
+---
+
 # Akamai
 
 Akamai powers and protects life online. For over 25 years, Akamai has been solving the internet's toughest challenges with market-leading security solutions, superior threat intelligence, and full-stack cloud computing solutions on the world's most distributed cloud platform.

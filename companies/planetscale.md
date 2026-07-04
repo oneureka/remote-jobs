@@ -1,3 +1,11 @@
+---
+companyName: PlanetScale
+remotePolicy: ['Remote']
+industry: 'Database, Cloud Infrastructure'
+website: https://planetscale.com
+region: North America
+---
+
 # PlanetScale
 
 PlanetScale is the world's most advanced serverless MySQL platform, built on Vitess — the horizontal-scaling technology originally developed at YouTube. Founded in 2018 by the co-creators and maintainers of Vitess, PlanetScale is a globally-distributed, remote-first company with employees across the United States and the globe. The platform is trusted by companies like GitHub, Slack, and Square.

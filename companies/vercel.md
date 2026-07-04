@@ -1,3 +1,11 @@
+---
+companyName: Vercel
+remotePolicy: ['Remote', 'Hybrid']
+industry: 'Cloud Infrastructure'
+website: https://vercel.com
+region: North America
+---
+
 # Vercel
 
 Vercel is agentic infrastructure for every app and agent. Vercel frees the world to ship what's next — it is the platform where humans and agents build software together, providing tools to build, deploy, and scale web applications and AI workflows.

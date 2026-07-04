@@ -1,3 +1,11 @@
+---
+companyName: Stencil
+remotePolicy: ['Remote']
+industry: 'Developer Tools'
+website: https://stenciljs.com
+region: North America
+---
+
 # Stencil
 
 Stencil is a compiler that generates reusable, scalable Web Components that run everywhere, combining TypeScript, JSX, and async rendering into standards-compliant components.

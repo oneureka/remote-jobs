@@ -1,3 +1,11 @@
+---
+companyName: Prisma
+remotePolicy: ['Remote']
+industry: 'Developer Tools, Database'
+website: https://prisma.io
+region: Europe
+---
+
 # Prisma
 
 Prisma is an open-source ORM for Node.js and TypeScript that makes working with databases easy, turning complex data problems into approachable workflows for teams of any size.

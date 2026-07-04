@@ -1,3 +1,11 @@
+---
+companyName: PostHog
+remotePolicy: ['Remote']
+industry: 'Product Analytics, Open Source'
+website: https://posthog.com
+region: North America
+---
+
 # PostHog
 
 We're here to help product engineers build successful products. PostHog is an open-source platform for product analytics, session replay, feature flags, and A/B testing — a single platform for people who build things.

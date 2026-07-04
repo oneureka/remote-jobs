@@ -1,3 +1,11 @@
+---
+companyName: Stripe
+remotePolicy: ['Hybrid', 'Remote']
+industry: 'Financial Services'
+website: https://stripe.com
+region: North America
+---
+
 # Stripe
 
 Stripe is a technology company that builds economic infrastructure for the internet, providing financial infrastructure to grow revenue by accepting payments and offering financial services.

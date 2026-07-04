@@ -1,3 +1,11 @@
+---
+companyName: Zapier
+remotePolicy: ['Remote']
+industry: 'Automation Platform'
+website: https://zapier.com
+region: North America
+---
+
 # Zapier
 
 Zapier is an AI orchestration platform that allows you to build and ship AI-powered workflows. It connects 9,000+ apps with no-, low-, and full-code tools to automate repetitive tasks, helping anyone automate the most tedious parts of their day-to-day job.

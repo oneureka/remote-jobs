@@ -1,3 +1,11 @@
+---
+companyName: Supabase
+remotePolicy: ['Remote']
+industry: 'Backend Platform'
+website: https://supabase.com
+region: North America
+---
+
 # Supabase
 
 Supabase is an open source Firebase alternative built on Postgres. It provides a complete backend platform for building web and mobile applications, with a suite of integrated tools including database, auth, storage, edge functions, and realtime capabilities.

@@ -1,3 +1,11 @@
+---
+companyName: GitBook
+remotePolicy: ['Remote']
+industry: 'Documentation Platform'
+website: https://gitbook.com
+region: Europe
+---
+
 # GitBook
 
 GitBook is an intelligent documentation platform for technical teams, providing a collaborative knowledge layer where humans and AI work together to create, maintain, and share documentation. It supports docs-as-code workflows with Git sync and AI-powered insights.

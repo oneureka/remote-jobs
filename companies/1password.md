@@ -1,3 +1,11 @@
+---
+companyName: 1Password
+remotePolicy: ['Remote', 'Flexible']
+industry: 'Identity Security'
+website: https://1password.com
+region: North America
+---
+
 # 1Password
 
 1Password provides trusted identity security for people and AI agents, unlocking productivity by making security and privacy simple for every person and organization. The company serves over 180,000 businesses including more than 30% of the Fortune 100.

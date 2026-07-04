@@ -1,3 +1,11 @@
+---
+companyName: Hugging Face
+remotePolicy: ['Remote']
+industry: 'Artificial Intelligence / Machine Learning'
+website: https://huggingface.co
+region: North America
+---
+
 # Hugging Face
 
 Hugging Face is the AI community platform where the machine learning community collaborates on models, datasets, and applications. It is the home of machine learning, hosting 500,000+ open source models and providing tools like the Transformers library to democratize AI development.

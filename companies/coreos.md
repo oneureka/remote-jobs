@@ -1,3 +1,11 @@
+---
+companyName: CoreOS
+remotePolicy: ['On-site']
+industry: 'Open Source Infrastructure'
+website: https://coreos.com
+region: North America
+---
+
 # CoreOS
 
 CoreOS is a software company whose mission is to improve the security and reliability of the internet by enabling companies to run their applications securely and reliably in any environment. CoreOS creates and delivers critical open source components for containerized applications, including Container Linux, etcd, and Kubernetes.

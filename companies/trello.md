@@ -1,3 +1,11 @@
+---
+companyName: Trello
+remotePolicy: ['Remote', 'Flexible']
+industry: 'Project Management Software'
+website: https://trello.com
+region: North America
+---
+
 # Trello
 
 Trello is the visual collaboration tool that creates a shared perspective on any project. It makes it easy for your team to get work done using boards, lists, and cards to organize tasks and track progress, no matter the project, workflow, or type of team.

@@ -1,3 +1,11 @@
+---
+companyName: Buffer
+remotePolicy: ['Remote']
+industry: 'Social Media Management'
+website: https://buffer.com
+region: North America
+---
+
 # Buffer
 
 Buffer is a social media management toolkit for creators, entrepreneurs, and small businesses to create valuable content and grow their audience organically. Since 2010, Buffer has been committed to transparency—sharing salaries, finances, and key metrics publicly. The company is fully remote with a four-day work week, serving 200,000+ customers across the globe.

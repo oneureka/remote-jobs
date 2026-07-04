@@ -1,3 +1,11 @@
+---
+companyName: HashiCorp
+remotePolicy: ['Remote', 'Flexible']
+industry: 'Cloud Infrastructure / DevOps'
+website: https://hashicorp.com
+region: North America
+---
+
 # HashiCorp
 
 HashiCorp, an IBM company, empowers organizations to automate and secure multi-cloud and hybrid environments with The Infrastructure Cloud. Its suite of Infrastructure Lifecycle Management and Security Lifecycle Management solutions (Terraform, Vault, Consul, Nomad) are built on open source projects downloaded over half a billion times annually.

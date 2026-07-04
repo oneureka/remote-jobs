@@ -1,3 +1,11 @@
+---
+companyName: CodePen
+remotePolicy: ['Remote']
+industry: 'Software Development'
+website: https://codepen.io
+region: North America
+---
+
 # CodePen
 
 CodePen is a social development environment that allows you to write code in the browser and see the results as you build. It is an online code editor and community for front-end designers and developers to build, test, and discover front-end code using HTML, CSS, and JavaScript.

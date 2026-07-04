@@ -1,3 +1,11 @@
+---
+companyName: LINE Plus
+remotePolicy: ['Hybrid']
+industry: 'Technology / Mobile Platform'
+website: https://linepluscorp.com/en/company/info/
+region: Asia
+---
+
 # LINE Plus
 
 LINE aims to surprise, inspire and make the daily lives of our users better using our technology and services. Launched as a messaging app in 2011, LINE has grown into a life platform spanning lifestyle, fintech, Web3, content, e-commerce, gaming, entertainment, AI and more.

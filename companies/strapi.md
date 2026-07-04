@@ -1,3 +1,11 @@
+---
+companyName: Strapi
+remotePolicy: ['Remote']
+industry: 'Content Management'
+website: https://strapi.io
+region: Europe
+---
+
 # Strapi
 
 Strapi is the leading open-source headless CMS that gives developers the freedom to use their favorite tools and frameworks while allowing editors to easily manage content and distribute it anywhere.

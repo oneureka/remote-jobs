@@ -1,3 +1,11 @@
+---
+companyName: Khan Academy
+remotePolicy: ['Remote', 'Flexible']
+industry: 'Education Technology'
+website: https://khanacademy.org
+region: North America
+---
+
 # Khan Academy
 
 Our mission is to provide a free, world-class education for anyone, anywhere.

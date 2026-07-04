@@ -1,3 +1,11 @@
+---
+companyName: DuckDuckGo
+remotePolicy: ['Remote']
+industry: 'Internet Privacy and Search'
+website: https://duckduckgo.com
+region: North America
+---
+
 # DuckDuckGo
 
 DuckDuckGo is the independent online protection company for anyone who wants to take back control of their personal information. Our built-in search engine is like Google but never tracks your searches, and our browser blocks ads, trackers, and cookies that collect your data. We're the independent, free browser that actively protects your personal information.

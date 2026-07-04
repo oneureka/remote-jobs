@@ -1,3 +1,11 @@
+---
+companyName: Cloudflare
+remotePolicy: ['Hybrid', 'Remote']
+industry: 'Cloud Connectivity and Security'
+website: https://cloudflare.com
+region: North America
+---
+
 # Cloudflare
 
 Cloudflare is a global cloud connectivity and security company that secures and accelerates online experiences. The company operates a hybrid work model offering In-Hub, Hybrid, and Distributed (fully remote within country of employment) roles. Cloudflare has approximately 4,400 employees and serves millions of internet properties worldwide.

@@ -1,3 +1,11 @@
+---
+companyName: Doist
+remotePolicy: ['Remote']
+industry: 'Productivity Software'
+website: https://doist.com
+region: Europe
+---
+
 # Doist
 
 Doist is a global pioneer of distributed work, building simple yet powerful tools that help people unlock their full potential. Since 2007, our fully remote team of 100+ people across 35+ countries has created Todoist—an award-winning productivity app used by 50M+—and Twist, a team communication platform for thoughtful, organized discussions. Bootstrapped and profitable, Doist has never taken venture capital.

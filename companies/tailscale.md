@@ -1,3 +1,11 @@
+---
+companyName: Tailscale
+remotePolicy: ['Remote']
+industry: 'Network Security'
+website: https://tailscale.com
+region: North America
+---
+
 # Tailscale
 
 Tailscale is a Zero Trust identity-based connectivity platform that replaces your legacy VPN, SASE, and PAM and connects remote teams, multi-cloud environments, CI/CD pipelines, Edge & IoT devices, and AI workloads. It creates secure, peer-to-peer mesh networks built on WireGuard.

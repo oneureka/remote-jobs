@@ -1,3 +1,11 @@
+---
+companyName: Coursera
+remotePolicy: ['Remote', 'Hybrid']
+industry: 'Online Education'
+website: https://coursera.org
+region: North America
+---
+
 # Coursera
 
 Coursera partners with more than 375 leading universities and companies to bring flexible, affordable, job-relevant online learning to individuals and organizations worldwide. Coursera was founded with a mission to provide universal access to world-class learning, offering courses, Specializations, Professional Certificates, and degrees.

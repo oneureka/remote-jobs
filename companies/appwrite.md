@@ -1,3 +1,11 @@
+---
+companyName: Appwrite
+remotePolicy: ['Remote']
+industry: 'Backend-as-a-Service'
+website: https://appwrite.io
+region: Asia
+---
+
 # Appwrite
 
 Appwrite is an open-source platform for building and scaling applications faster, offering Auth, Databases, Storage, Functions, Messaging, Realtime, and web hosting all in one place.

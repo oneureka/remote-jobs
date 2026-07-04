@@ -1,3 +1,11 @@
+---
+companyName: Netlify
+remotePolicy: ['Remote']
+industry: 'Cloud Computing, Web Development'
+website: https://netlify.com
+region: North America
+---
+
 # Netlify
 
 Netlify is the most popular way to build, deploy and scale modern web applications. Home to millions of developers and thousands of enterprises, it is the platform of choice for running modern composable web applications in production.

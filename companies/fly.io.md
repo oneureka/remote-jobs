@@ -1,3 +1,11 @@
+---
+companyName: Fly.io
+remotePolicy: ['Remote']
+industry: 'Cloud Computing Platform'
+website: https://fly.io
+region: North America
+---
+
 # Fly.io
 
 Fly.io is a developer-focused public cloud platform running hardware-virtualized containers that launch instantly. It enables developers to deploy applications close to users across 30+ global regions with built-in private networking, scalable storage, and sandboxed compute.

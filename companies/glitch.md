@@ -1,3 +1,11 @@
+---
+companyName: Glitch
+remotePolicy: ['Remote', 'Flexible']
+industry: 'Cloud Development / Web IDE'
+website: https://glitch.com
+region: North America
+---
+
 # Glitch
 
 Glitch is the friendly community where everyone can discover, create, remix, and host web apps. It is a collaborative online IDE with instant deployment and hosting, making web development accessible to coders of all skill levels.

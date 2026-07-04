@@ -1,3 +1,11 @@
+---
+companyName: Fiverr
+remotePolicy: ['Hybrid']
+industry: 'Freelance Services Marketplace'
+website: https://fiverr.com
+region: Asia
+---
+
 # Fiverr
 
 Fiverr is the world's largest digital marketplace for freelance services, connecting businesses with skilled freelancers across 700+ categories including programming, design, marketing, and writing on an AI-enhanced platform.

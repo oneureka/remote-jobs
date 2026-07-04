@@ -1,3 +1,11 @@
+---
+companyName: Render
+remotePolicy: ['Remote', 'Flexible']
+industry: 'Cloud Computing'
+website: https://render.com
+region: North America
+---
+
 # Render
 
 Render is the modern cloud for developers and software teams — deploy and scale any app or agent from your first user to your billionth on intuitive cloud infrastructure.

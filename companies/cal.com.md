@@ -1,3 +1,11 @@
+---
+companyName: Cal.com
+remotePolicy: ['Remote']
+industry: 'Scheduling Software'
+website: https://cal.com
+region: North America
+---
+
 # Cal.com
 
 Cal.com is building the infrastructure for time by making time coordination effortless for businesses, products, and public services. Their mission is to connect a billion people by 2031 through calendar scheduling. Cal.com powers scheduling for solopreneurs and enterprises alike.

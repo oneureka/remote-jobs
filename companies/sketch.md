@@ -1,3 +1,11 @@
+---
+companyName: Sketch
+remotePolicy: ['Remote']
+industry: 'Design Software'
+website: https://sketch.com
+region: Europe
+---
+
 # Sketch
 
 Sketch is a macOS design toolkit made by designers, for designers, for designing, prototyping, collaborating, and handing off designs to developers.

@@ -1,3 +1,11 @@
+---
+companyName: PingCAP
+remotePolicy: ['Remote']
+industry: 'Open-source Database, Infrastructure'
+website: https://pingcap.com
+region: North America
+---
+
 # PingCAP
 
 PingCAP is the company behind TiDB, an advanced open-source distributed SQL database with MySQL compatibility. Founded in 2015 by three seasoned infrastructure engineers, PingCAP has practiced remote-friendly work culture since inception, with team members distributed across Beijing, Shanghai, Guangzhou, Shenzhen, Chengdu, Hangzhou, Silicon Valley and more. TiDB is one of the most popular open-source database projects in the world and TiKV is a CNCF graduated project.
