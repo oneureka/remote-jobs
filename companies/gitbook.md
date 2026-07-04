@@ -3,7 +3,7 @@ companyName: GitBook
 remotePolicy: ['Remote']
 industry: 'Documentation Platform'
 website: https://gitbook.com
-region: Europe
+region: North America
 ---
 
 # GitBook

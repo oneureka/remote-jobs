@@ -3,7 +3,7 @@ companyName: Doist
 remotePolicy: ['Remote']
 industry: 'Productivity Software'
 website: https://doist.com
-region: Europe
+region: North America
 ---
 
 # Doist
