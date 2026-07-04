@@ -1,10 +1,10 @@
 City	Country	Region	Avg AQI	Temp Range	Cost Tier	Min Wage
-Chiang Mai	Thailand	Asia	40	18°C~36°C	Very Low	฿350/day (~฿10,500/mo)
-Bandung	Indonesia	Asia	50	19°C~28°C	Very Low	Rp2.2M/mo
-Hanoi	Vietnam	Asia	55	14°C~33°C	Very Low	₫4.42M/mo
-Ho Chi Minh City	Vietnam	Asia	50	25°C~35°C	Very Low	₫4.42M/mo
-Da Nang	Vietnam	Asia	42	19°C~34°C	Very Low	₫4.42M/mo
-Istanbul	Turkey	Europe	48	4°C~30°C	Very Low	₺22,104/mo
+Chiang Mai	Thailand	Asia	40	18°C~36°C	Low	฿350/day (~฿10,500/mo)
+Bandung	Indonesia	Asia	50	19°C~28°C	Low	Rp2.2M/mo
+Hanoi	Vietnam	Asia	55	14°C~33°C	Low	₫4.42M/mo
+Ho Chi Minh City	Vietnam	Asia	50	25°C~35°C	Low	₫4.42M/mo
+Da Nang	Vietnam	Asia	42	19°C~34°C	Low	₫4.42M/mo
+Istanbul	Turkey	Europe	48	4°C~30°C	Low	₺22,104/mo
 Porto	Portugal	Europe	25	5°C~25°C	Low	€956/mo
 Kuala Lumpur	Malaysia	Asia	45	24°C~33°C	Low	RM1,500/mo
 Bangkok	Thailand	Asia	55	26°C~35°C	Low	฿350/day (~฿10,500/mo)
