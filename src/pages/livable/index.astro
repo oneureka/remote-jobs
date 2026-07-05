@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+
+const cities = await getCollection('cities')
+
+type RegionGroup = { region: string; cities: typeof cities }
+
+const groups: RegionGroup[] = cities.reduce<RegionGroup[]>((acc, city) => {
+  const region = city.data.Region
+  const group = acc.find((g) => g.region === region)
+  if (group) {
+    group.cities.push(city)
+  } else {
+    acc.push({ region, cities: [city] })
+  }
+  return acc
+}, [])
+---
+
+<Layout>
+  <div class="mx-auto max-w-[1200px] px-5">
+    <header class="pt-[30px]">
+      <div class="mb-5">
+        <h2 class="text-2xl leading-9">Livable Cities</h2>
+        <h3 class="text-slate-500 text-2xl leading-8 font-medium">
+          Discover cities for digital nomads
+        </h3>
+      </div>
+    </header>
+
+    {
+      groups.map(({ region, cities }) => (
+        <section class="mb-14">
+          <div class="flex items-baseline justify-between mb-5">
+            <h3 class="text-lg font-semibold text-gray-800">{region}</h3>
+            <span class="text-sm text-slate-400">{cities.length} cities</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {cities.map((city) => (
+              <div class="card border border-slate-200 rounded-xl p-4 transition-all duration-200 hover:border-blue-400 hover:shadow-sm bg-white">
+                <div class="flex items-center gap-2.5 mb-2">
+                  <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-sm font-bold text-blue-600 shrink-0">
+                    {city.data.City[0]}
+                  </div>
+                  <div class="min-w-0">
+                    <h4 class="text-sm font-semibold text-gray-900 truncate m-0">
+                      {city.data.City}
+                    </h4>
+                    <p class="text-xs text-slate-400 truncate">
+                      {city.data.Country}
+                    </p>
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-slate-500 mt-1">
+                  <span class="inline-flex items-center gap-1">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full"
+                      class:list={[
+                        city.data['Avg AQI'] <= 50
+                          ? 'bg-green-400'
+                          : city.data['Avg AQI'] <= 100
+                            ? 'bg-yellow-400'
+                            : 'bg-red-400'
+                      ]}
+                    />
+                    AQI {city.data['Avg AQI']}
+                  </span>
+                  <span>{city.data['Temp Range']}</span>
+                  <span
+                    class="font-medium"
+                    class:list={[
+                      city.data['Cost Tier'] === 'Low'
+                        ? 'text-green-600'
+                        : city.data['Cost Tier'] === 'Mid'
+                          ? 'text-yellow-600'
+                          : 'text-red-600'
+                    ]}
+                  >
+                    {city.data['Cost Tier']}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))
+    }
+  </div>
+</Layout>

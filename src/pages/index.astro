@@ -1,8 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro'
-
 import { getCollection } from 'astro:content'
+
 const companies = await getCollection('companies')
+
+type RegionGroup = { region: string; companies: typeof companies }
+
+const groups: RegionGroup[] = companies.reduce<RegionGroup[]>((acc, company) => {
+  const region = company.data.region
+  const group = acc.find((g) => g.region === region)
+  if (group) {
+    group.companies.push(company)
+  } else {
+    acc.push({ region, companies: [company] })
+  }
+  return acc
+}, [])
 ---
 
 <Layout>
@@ -10,38 +23,49 @@ const companies = await getCollection('companies')
     <header class="pt-[30px]">
       <div class="mb-5">
         <h2 class="text-2xl leading-9">Hey 👋</h2>
-        <h3 class="text-slate-500 text-2xl leading-8 font-medium">Remote Jobs</h3>
+        <h3 class="text-slate-500 text-2xl leading-8 font-medium">
+          Remote Jobs
+        </h3>
       </div>
     </header>
 
-    <div class="uppercase text-xs mt-20 mb-2.5 text-slate-600 font-semibold">
-      Companies hiring remotely
-    </div>
+    {
+      groups.map(({ region, companies }) => (
+        <section class="mb-14">
+          <div class="flex items-baseline justify-between mb-5">
+            <h3 class="text-lg font-semibold text-gray-800">{region}</h3>
+            <span class="text-sm text-slate-400">{companies.length} companies</span>
+          </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto mb-20">
-      {companies.map(company => (
-        <a
-          href={company.id}
-          class="card card-border border-slate-300 rounded-sm p-4 transition-colors duration-200 hover:border-blue-600"
-        >
-          <div>
-            <h4 class="text-lg text-gray-900 m-0">
-              {company.data.companyName} <span class="text-slate-600">→</span>
-            </h4>
-            <p class="text-sm text-slate-600 mt-1 truncate">
-              {company.data.industry.join(', ')}
-            </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {
+              companies.map((company) => (
+                <a
+                  href={company.id}
+                  class="card border border-slate-200 rounded-xl p-4 transition-all duration-200 hover:border-blue-400 hover:shadow-sm bg-white"
+                >
+                  <div class="flex items-center gap-2.5 mb-2">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-sm font-bold text-blue-600 shrink-0">
+                      {company.data.companyName[0]}
+                    </div>
+                    <div class="min-w-0">
+                      <h4 class="text-sm font-semibold text-gray-900 truncate m-0">{company.data.companyName}</h4>
+                      <p class="text-xs text-slate-400 truncate">{company.data.industry[0]}</p>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-slate-500 mt-1">
+                    {
+                      company.data.remotePolicy.map((p: string) => (
+                        <span class="text-blue-600 font-medium">{p}</span>
+                      ))
+                    }
+                  </div>
+                </a>
+              ))
+            }
           </div>
-          <div class="flex items-end justify-between mt-2">
-            <div class="flex gap-2 items-end">
-              <span class="text-xs text-slate-500 font-medium">{company.data.region}</span>
-              {company.data.remotePolicy.map(p => (
-                <span class="text-[11px] text-blue-600 font-medium">{p}</span>
-              ))}
-            </div>
-          </div>
-        </a>
-      ))}
-    </div>
+        </section>
+      ))
+    }
   </div>
 </Layout>
