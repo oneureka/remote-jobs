@@ -1,8 +1,47 @@
 ---
-import Welcome from '../components/Welcome.astro'
 import Layout from '../layouts/Layout.astro'
+
+import { getCollection } from 'astro:content'
+const companies = await getCollection('companies')
 ---
 
 <Layout>
-  <Welcome />
+  <div class="mx-auto max-w-[1200px] px-5">
+    <header class="pt-[30px]">
+      <div class="mb-5">
+        <h2 class="text-2xl leading-9">Hey 👋</h2>
+        <h3 class="text-slate-500 text-2xl leading-8 font-medium">Remote Jobs</h3>
+      </div>
+    </header>
+
+    <div class="uppercase text-xs mt-20 mb-2.5 text-slate-600 font-semibold">
+      Companies hiring remotely
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto mb-20">
+      {companies.map(company => (
+        <a
+          href={company.id}
+          class="card card-border border-slate-300 rounded-sm p-4 transition-colors duration-200 hover:border-blue-600"
+        >
+          <div>
+            <h4 class="text-lg text-gray-900 m-0">
+              {company.data.companyName} <span class="text-slate-600">→</span>
+            </h4>
+            <p class="text-sm text-slate-600 mt-1 truncate">
+              {company.data.industry.join(', ')}
+            </p>
+          </div>
+          <div class="flex items-end justify-between mt-2">
+            <div class="flex gap-2 items-end">
+              <span class="text-xs text-slate-500 font-medium">{company.data.region}</span>
+              {company.data.remotePolicy.map(p => (
+                <span class="text-[11px] text-blue-600 font-medium">{p}</span>
+              ))}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
 </Layout>
