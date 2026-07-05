@@ -1,0 +1,19 @@
+---
+export interface Props {
+  region: string
+  count: number
+  countLabel: string
+}
+
+const { region, count, countLabel } = Astro.props
+---
+
+<section class="mb-14">
+  <div class="flex items-baseline justify-between mb-5">
+    <h3 class="text-lg font-semibold text-gray-800">{region}</h3>
+    <span class="text-sm text-slate-400">{count} {countLabel}</span>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+    <slot />
+  </div>
+</section>

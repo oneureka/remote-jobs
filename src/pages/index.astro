@@ -1,21 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import RegionSection from '../components/RegionSection.astro'
 import { getCollection } from 'astro:content'
+import { groupByRegion } from '../utils/groupByRegion'
 
 const companies = await getCollection('companies')
 
-type RegionGroup = { region: string; companies: typeof companies }
-
-const groups: RegionGroup[] = companies.reduce<RegionGroup[]>((acc, company) => {
-  const region = company.data.region
-  const group = acc.find((g) => g.region === region)
-  if (group) {
-    group.companies.push(company)
-  } else {
-    acc.push({ region, companies: [company] })
-  }
-  return acc
-}, [])
+const groups = groupByRegion(companies, (c) => c.data.region)
 ---
 
 <Layout>
@@ -30,41 +21,34 @@ const groups: RegionGroup[] = companies.reduce<RegionGroup[]>((acc, company) => 
     </header>
 
     {
-      groups.map(({ region, companies }) => (
-        <section class="mb-14">
-          <div class="flex items-baseline justify-between mb-5">
-            <h3 class="text-lg font-semibold text-gray-800">{region}</h3>
-            <span class="text-sm text-slate-400">{companies.length} companies</span>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {
-              companies.map((company) => (
-                <a
-                  href={company.id}
-                  class="card border border-slate-200 rounded-xl p-4 transition-all duration-200 hover:border-blue-400 hover:shadow-sm bg-white"
-                >
-                  <div class="flex items-center gap-2.5 mb-2">
-                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-sm font-bold text-blue-600 shrink-0">
-                      {company.data.companyName[0]}
-                    </div>
-                    <div class="min-w-0">
-                      <h4 class="text-sm font-semibold text-gray-900 truncate m-0">{company.data.companyName}</h4>
-                      <p class="text-xs text-slate-400 truncate">{company.data.industry[0]}</p>
-                    </div>
+      groups.map(({ region, items }) => (
+        <RegionSection region={region} count={items.length} countLabel="companies">
+          {
+            items.map((company) => (
+              <a
+                href={company.id}
+                class="card border border-slate-200 rounded-xl p-4 transition-all duration-200 hover:border-blue-400 hover:shadow-sm bg-white"
+              >
+                <div class="flex items-center gap-2.5 mb-2">
+                  <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-sm font-bold text-blue-600 shrink-0">
+                    {company.data.companyName[0]}
                   </div>
-                  <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-slate-500 mt-1">
-                    {
-                      company.data.remotePolicy.map((p: string) => (
-                        <span class="text-blue-600 font-medium">{p}</span>
-                      ))
-                    }
+                  <div class="min-w-0">
+                    <h4 class="text-sm font-semibold text-gray-900 truncate m-0">{company.data.companyName}</h4>
+                    <p class="text-xs text-slate-400 truncate">{company.data.industry[0]}</p>
                   </div>
-                </a>
-              ))
-            }
-          </div>
-        </section>
+                </div>
+                <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-slate-500 mt-1">
+                  {
+                    company.data.remotePolicy.map((p: string) => (
+                      <span class="text-blue-600 font-medium">{p}</span>
+                    ))
+                  }
+                </div>
+              </a>
+            ))
+          }
+        </RegionSection>
       ))
     }
   </div>
