@@ -17,7 +17,7 @@ const { Content } = await render(company)
 <Layout>
   <div class="mx-auto max-w-2xl px-5">
     <header class="pt-7.5">
-      <a href="/companies" class="text-xs text-gray-400 hover:text-gray-600"
+      <a href="/companies" class="text-xs text-base-content/50 hover:text-base-content/70"
         >&larr; Companies</a
       >
     </header>
@@ -25,29 +25,29 @@ const { Content } = await render(company)
     <div class="mt-4 mb-8">
       <div class="flex items-center gap-3 mb-3">
         <div
-          class="w-10 h-10 rounded-full bg-linear-to-br from-yellow-100 to-yellow-200 flex items-center justify-center text-lg font-bold text-yellow-700 shrink-0"
+          class="w-10 h-10 rounded-full bg-linear-to-br from-primary/10 to-primary/20 flex items-center justify-center text-lg font-bold text-primary shrink-0"
         >
           {company.data.companyName[0]}
         </div>
         <div>
-          <h1 class="text-2xl font-semibold text-gray-900 m-0">
+          <h1 class="text-2xl font-semibold text-base-content m-0">
             {company.data.companyName}
           </h1>
-          <p class="text-sm text-gray-400 m-0">{company.data.region}</p>
+          <p class="text-sm text-base-content/50 m-0">{company.data.region}</p>
         </div>
       </div>
 
       <div class="flex flex-wrap gap-2 text-xs mb-3">
         {
           company.data.industry.map((ind: string) => (
-            <span class="bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+            <span class="bg-base-200 border border-base-300 px-2.5 py-1 rounded-md">
               {ind}
             </span>
           ))
         }
         {
           company.data.remotePolicy.map((p: string) => (
-            <span class="text-yellow-600 font-medium bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+            <span class="text-primary font-medium bg-base-200 border border-base-300 px-2.5 py-1 rounded-md">
               {p}
             </span>
           ))
@@ -59,7 +59,7 @@ const { Content } = await render(company)
           <a
             href={company.data.website}
             target="_blank"
-            class="inline-flex items-center gap-1 text-xs text-gray-500 hover:text-gray-700 bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md"
+            class="inline-flex items-center gap-1 text-xs text-base-content/70 hover:text-base-content bg-base-200 border border-base-300 px-2.5 py-1 rounded-md"
           >
             {company.data.website.replace(/^https?:\/\//, '')}
           </a>
@@ -68,7 +68,7 @@ const { Content } = await render(company)
     </div>
 
     <div
-      class="border border-gray-200 rounded-xl p-5 bg-neutral-50 mb-8 text-sm text-gray-700 leading-relaxed"
+      class="border border-base-300 rounded-xl p-5 bg-base-100 mb-8 text-sm text-base-content/80 leading-relaxed"
     >
       <Content />
     </div>
@@ -78,10 +78,10 @@ const { Content } = await render(company)
 <style is:global>
   body {
     background-image:
-      linear-gradient(-90deg, rgba(0,0,0,0.02) 1px, transparent 1px),
-      linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
-      linear-gradient(-90deg, rgba(0,0,0,0.02) 1px, transparent 1px),
-      linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+      linear-gradient(-90deg, color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px),
+      linear-gradient(color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px),
+      linear-gradient(-90deg, color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px),
+      linear-gradient(color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px);
     background-size: 6px 6px, 6px 6px, 120px 120px, 120px 120px;
   }
 </style>

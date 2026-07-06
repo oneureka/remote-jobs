@@ -1,0 +1,62 @@
+---
+interface Job {
+  company: string
+  position: string
+  location: string
+  salary: string
+  tags: string[]
+  posted: string
+  url: string
+}
+
+interface Props {
+  job: Job
+  index?: number
+  extraAttrs?: Record<string, string>
+}
+
+const { job, index, extraAttrs } = Astro.props
+const dataAttrs: Record<string, string> = { ...extraAttrs }
+delete dataAttrs.class
+if (index !== undefined) dataAttrs['data-index'] = String(index)
+---
+
+  <a
+    href={job.url}
+    target="_blank"
+    class:list={[
+      'group grid grid-cols-[70px_1fr] items-center gap-4 w-full px-4 py-3 mb-2 border border-base-300 rounded bg-base-100 hover:border-neutral transition-all duration-200 overflow-hidden',
+      extraAttrs?.class
+    ]}
+    {...dataAttrs}
+  >
+    <img
+      src={`https://placehold.co/70x70/f3f4f6/9ca3af?text=+`}
+      alt={`${job.company} logo`}
+      class="w-[70px] h-[70px] mask mask-squircle bg-base-200 shrink-0"
+      loading="lazy"
+    />
+
+    <div class="relative min-w-0">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-semibold text-base-content truncate m-0">
+          {job.company}
+        </h3>
+        <p class="text-xs text-base-content/50 shrink-0 ml-2">
+          {job.posted}
+        </p>
+      </div>
+
+      <div class="md:flex md:items-center md:justify-between mt-0.5">
+        <p class="text-sm text-base-content/70 m-0">{job.position}</p>
+        <div class="flex flex-wrap gap-1.5 mt-1 md:mt-0">
+          <span class="text-xs text-base-content/60 bg-base-200 border border-base-300 px-2 py-0.5 rounded-md leading-none">
+            {job.location}
+          </span>
+          <span class="text-xs text-base-content/60 bg-base-200 border border-base-300 px-2 py-0.5 rounded-md leading-none">
+            {job.salary}
+          </span>
+        </div>
+      </div>
+    </div>
+  </a>

@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/layout.astro'
-import RegionSection from '../../components/RegionSection.astro'
+import RegionSection from '../../components/region-section.astro'
 import { getCollection } from 'astro:content'
 import { groupByRegion } from '../../utils/groupByRegion'
 import { loadCities } from '../../utils/citiesData'
@@ -16,7 +16,7 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
     <header class="pt-7.5">
       <div class="mb-2">
         <h2 class="text-2xl leading-9">Livable Cities</h2>
-        <p class="text-sm text-gray-400 mt-1">
+        <p class="text-sm text-base-content/50 mt-1">
           Discover cities for digital nomads
         </p>
       </div>
@@ -48,30 +48,30 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
             countLabel="cities"
           >
             {items.map((city) => (
-              <div class="card border border-gray-200 rounded-xl p-4 transition-all duration-200 hover:border-yellow-400 hover:shadow-sm bg-neutral-50">
+              <div class="card border border-base-300 rounded-xl p-4 transition-all duration-200 hover:border-primary hover:shadow-sm bg-base-100">
                 <div class="flex items-center gap-2.5 mb-2">
-                  <div class="w-8 h-8 mask mask-squircle bg-linear-to-br from-yellow-100 to-yellow-200 flex items-center justify-center text-sm font-bold text-yellow-700 shrink-0">
+                  <div class="w-8 h-8 mask mask-squircle bg-linear-to-br from-primary/10 to-primary/20 flex items-center justify-center text-sm font-bold text-primary shrink-0">
                     {city.data.City[0]}
                   </div>
                   <div class="min-w-0">
-                    <h4 class="text-sm font-semibold text-gray-900 truncate m-0">
+                    <h4 class="text-sm font-semibold text-base-content truncate m-0">
                       {city.data.City}
                     </h4>
-                    <p class="text-xs text-gray-400 truncate">
+                    <p class="text-xs text-base-content/50 truncate">
                       {city.data.Country}
                     </p>
                   </div>
                 </div>
-                <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-gray-500 mt-1">
+                <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-base-content/70 mt-1">
                   <span class="inline-flex items-center gap-1">
                     <span
                       class="w-1.5 h-1.5 rounded-full"
                       class:list={[
                         city.data['Avg AQI'] <= 50
-                          ? 'bg-green-400'
+                          ? 'bg-success'
                           : city.data['Avg AQI'] <= 100
-                            ? 'bg-yellow-400'
-                            : 'bg-red-400'
+                            ? 'bg-warning'
+                            : 'bg-error'
                       ]}
                     />
                     AQI {city.data['Avg AQI']}
@@ -81,10 +81,10 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
                     class="font-medium"
                     class:list={[
                       city.data['Cost Tier'] === 'Low'
-                        ? 'text-green-600'
+                        ? 'text-success'
                         : city.data['Cost Tier'] === 'Mid'
-                          ? 'text-yellow-600'
-                          : 'text-red-600'
+                          ? 'text-warning'
+                          : 'text-error'
                     ]}
                   >
                     {city.data['Cost Tier']}
@@ -106,30 +106,30 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
             countLabel="cities"
           >
             {items.map((city) => (
-              <div class="card border border-gray-200 rounded-xl p-4 transition-all duration-200 hover:border-yellow-400 hover:shadow-sm bg-neutral-50">
+              <div class="card border border-base-300 rounded-xl p-4 transition-all duration-200 hover:border-primary hover:shadow-sm bg-base-100">
                 <div class="flex items-center gap-2.5 mb-2">
-                  <div class="w-8 h-8 rounded-full bg-linear-to-br from-yellow-100 to-yellow-200 flex items-center justify-center text-sm font-bold text-yellow-700 shrink-0">
+                  <div class="w-8 h-8 rounded-full bg-linear-to-br from-primary/10 to-primary/20 flex items-center justify-center text-sm font-bold text-primary shrink-0">
                     {city.City[0]}
                   </div>
                   <div class="min-w-0">
-                    <h4 class="text-sm font-semibold text-gray-900 truncate m-0">
+                    <h4 class="text-sm font-semibold text-base-content truncate m-0">
                       {city.City}
                     </h4>
-                    <p class="text-xs text-gray-400 truncate">
+                    <p class="text-xs text-base-content/50 truncate">
                       {city.Province}
                     </p>
                   </div>
                 </div>
-                <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-gray-500 mt-1">
+                <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-base-content/70 mt-1">
                   <span class="inline-flex items-center gap-1">
                     <span
                       class="w-1.5 h-1.5 rounded-full"
                       class:list={[
                         city['Avg AQI'] <= 50
-                          ? 'bg-green-400'
+                          ? 'bg-success'
                           : city['Avg AQI'] <= 100
-                            ? 'bg-yellow-400'
-                            : 'bg-red-400'
+                            ? 'bg-warning'
+                            : 'bg-error'
                       ]}
                     />
                     AQI {city['Avg AQI']}
@@ -139,10 +139,10 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
                     class="font-medium"
                     class:list={[
                       city['Cost Tier'] === 'Low'
-                        ? 'text-green-600'
+                        ? 'text-success'
                         : city['Cost Tier'] === 'Mid'
-                          ? 'text-yellow-600'
-                          : 'text-red-600'
+                          ? 'text-warning'
+                          : 'text-error'
                     ]}
                   >
                     {city['Cost Tier']}

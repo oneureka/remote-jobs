@@ -1,5 +1,8 @@
 ---
 import '@assets/globals.css'
+
+const path = Astro.url.pathname
+const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p))
 ---
 
 <!doctype html>
@@ -11,15 +14,44 @@ import '@assets/globals.css'
     <link rel="icon" href="/favicon.ico" />
     <title>Remote Jobs</title>
   </head>
-  <body class="antialiased leading-none text-gray-900 bg-neutral-100">
+  <body class="antialiased leading-none text-base-content bg-base-200 pt-14">
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 h-14 bg-base-100/80 backdrop-blur-md border-b border-base-300"
+    >
+      <div class="mx-auto max-w-2xl px-5 h-full flex items-center justify-between">
+        <a
+          href="/"
+          class="text-sm font-semibold text-base-content hover:text-primary transition-colors"
+          class:list={{ 'text-primary': path === '/' }}
+        >
+          Home
+        </a>
+        <div class="flex items-center gap-6">
+          <a
+            href="/companies"
+            class="text-sm text-base-content/70 hover:text-base-content transition-colors"
+            class:list={{ 'text-base-content font-medium': isActive('/companies') }}
+          >
+            公司
+          </a>
+          <a
+            href="/livable"
+            class="text-sm text-base-content/70 hover:text-base-content transition-colors"
+            class:list={{ 'text-base-content font-medium': isActive('/livable') }}
+          >
+            城市
+          </a>
+        </div>
+      </div>
+    </nav>
     <slot />
     <footer
-      class="mx-auto max-w-2xl px-5 py-8 text-center md:text-left text-xs text-gray-400"
+      class="mx-auto max-w-2xl px-5 py-8 text-center md:text-left text-xs text-base-content/50"
     >
       <p class="m-0">
         <a
           href="/"
-          class="text-inherit underline underline-offset-2 hover:text-gray-600"
+          class="text-inherit underline underline-offset-2 hover:text-base-content/70"
           >Remote Jobs</a
         >
         &nbsp;—&nbsp;curated remote-friendly companies
@@ -27,25 +59,25 @@ import '@assets/globals.css'
       <p class="m-0 mt-2">
         Built with&nbsp;<a
           href="https://astro.build"
-          class="text-inherit underline underline-offset-2 hover:text-gray-600"
+          class="text-inherit underline underline-offset-2 hover:text-base-content/70"
           target="_blank">Astro</a
         >
         &nbsp;·&nbsp;
         <a
           href="/jobs"
-          class="text-inherit underline underline-offset-2 hover:text-gray-600"
+          class="text-inherit underline underline-offset-2 hover:text-base-content/70"
           >Search Jobs</a
         >
         &nbsp;·&nbsp;
         <a
           href="/companies"
-          class="text-inherit underline underline-offset-2 hover:text-gray-600"
+          class="text-inherit underline underline-offset-2 hover:text-base-content/70"
           >Companies</a
         >
         &nbsp;·&nbsp;
         <a
           href="/livable"
-          class="text-inherit underline underline-offset-2 hover:text-gray-600"
+          class="text-inherit underline underline-offset-2 hover:text-base-content/70"
           >Livable Cities</a
         >
       </p>

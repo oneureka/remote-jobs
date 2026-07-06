@@ -10,8 +10,8 @@ const { region, count, countLabel } = Astro.props
 
 <section class="mb-14">
   <div class="flex items-baseline justify-between mb-5">
-    <h3 class="text-lg font-semibold text-gray-900">{region}</h3>
-    <span class="text-sm text-gray-400">{count} {countLabel}</span>
+    <h3 class="text-lg font-semibold text-base-content">{region}</h3>
+    <span class="text-sm text-base-content/50">{count} {countLabel}</span>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
     <slot />

@@ -22,22 +22,22 @@ const visa = cityData?.Country
 const isGlobal = cityData?._source === 'global'
 
 function aqiColor(aqi: number): string {
-  if (aqi <= 50) return 'bg-green-400'
-  if (aqi <= 100) return 'bg-yellow-400'
-  return 'bg-red-400'
+  if (aqi <= 50) return 'bg-success'
+  if (aqi <= 100) return 'bg-warning'
+  return 'bg-error'
 }
 
 function costColor(tier: string): string {
-  if (tier === 'Low') return 'text-green-600'
-  if (tier === 'Medium' || tier === 'Mid') return 'text-yellow-600'
-  return 'text-red-600'
+  if (tier === 'Low') return 'text-success'
+  if (tier === 'Medium' || tier === 'Mid') return 'text-warning'
+  return 'text-error'
 }
 ---
 
 <Layout>
   <div class="mx-auto max-w-2xl px-5">
     <header class="pt-7.5">
-      <a href="/livable" class="text-xs text-gray-400 hover:text-gray-600"
+      <a href="/livable" class="text-xs text-base-content/50 hover:text-base-content/70"
         >&larr; Livable Cities</a
       >
     </header>
@@ -45,13 +45,13 @@ function costColor(tier: string): string {
     <div class="mt-4 mb-8">
       <div class="flex items-center gap-3 mb-2">
         <div
-          class="w-10 h-10 rounded-full bg-linear-to-br from-yellow-100 to-yellow-200 flex items-center justify-center text-lg font-bold text-yellow-700 shrink-0"
+          class="w-10 h-10 rounded-full bg-linear-to-br from-primary/10 to-primary/20 flex items-center justify-center text-lg font-bold text-primary shrink-0"
         >
           {cityName[0]}
         </div>
         <div>
-          <h1 class="text-2xl font-semibold text-gray-900 m-0">{cityName}</h1>
-          <p class="text-sm text-gray-400 m-0">
+          <h1 class="text-2xl font-semibold text-base-content m-0">{cityName}</h1>
+          <p class="text-sm text-base-content/50 m-0">
             {isGlobal ? cityData!.Country : cityData!.Province}
           </p>
         </div>
@@ -61,27 +61,27 @@ function costColor(tier: string): string {
         {
           cityData && (
             <>
-              <span class="inline-flex items-center gap-1 bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+              <span class="inline-flex items-center gap-1 bg-base-200 border border-base-300 px-2.5 py-1 rounded-md">
                 <span
                   class={`w-2 h-2 rounded-full ${aqiColor(Number(cityData['Avg AQI']))}`}
                 />
                 AQI {cityData['Avg AQI']}
               </span>
-              <span class="bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+              <span class="bg-base-200 border border-base-300 px-2.5 py-1 rounded-md">
                 {cityData['Temp Range']}
               </span>
               <span
-                class={`bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md font-medium ${costColor(cityData['Cost Tier'])}`}
+                class={`bg-base-200 border border-base-300 px-2.5 py-1 rounded-md font-medium ${costColor(cityData['Cost Tier'])}`}
               >
                 {cityData['Cost Tier']}
               </span>
               {cityData['Min Wage'] && (
-                <span class="bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+                <span class="bg-base-200 border border-base-300 px-2.5 py-1 rounded-md">
                   Min Wage: {cityData['Min Wage']}
                 </span>
               )}
               {cityData.Region && (
-                <span class="bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+                <span class="bg-base-200 border border-base-300 px-2.5 py-1 rounded-md">
                   {cityData.Region}
                 </span>
               )}
@@ -91,10 +91,10 @@ function costColor(tier: string): string {
         {
           extra && (
             <>
-              <span class="bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+              <span class="bg-base-200 border border-base-300 px-2.5 py-1 rounded-md">
                 Safety: {extra['Safety Index']}
               </span>
-              <span class="bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+              <span class="bg-base-200 border border-base-300 px-2.5 py-1 rounded-md">
                 EPI: {extra['EF EPI Band']}
               </span>
             </>
@@ -106,9 +106,9 @@ function costColor(tier: string): string {
     {
       climate && (
         <section class="mb-8">
-          <h2 class="text-base font-semibold text-gray-900 mb-3">Climate</h2>
-          <div class="border border-gray-200 rounded-xl p-4 bg-neutral-50">
-            <p class="text-sm text-gray-700 m-0">
+          <h2 class="text-base font-semibold text-base-content mb-3">Climate</h2>
+          <div class="border border-base-300 rounded-xl p-4 bg-base-100">
+            <p class="text-sm text-base-content/80 m-0">
               <span class="font-medium">{climate['Climate Type']}</span>
               {climate['Climate Desc'] && (
                 <> &mdash; {climate['Climate Desc']}</>
@@ -116,7 +116,7 @@ function costColor(tier: string): string {
             </p>
             {climate['Climate Disaster Risk'] &&
               climate['Climate Disaster Risk'] !== 'N/A' && (
-                <p class="text-xs text-gray-400 mt-1.5 m-0">
+                <p class="text-xs text-base-content/50 mt-1.5 m-0">
                   Disaster risk: {climate['Climate Disaster Risk']}
                 </p>
               )}
@@ -128,9 +128,9 @@ function costColor(tier: string): string {
     {
       lifestyle && (
         <section class="mb-8">
-          <h2 class="text-base font-semibold text-gray-900 mb-3">Lifestyle</h2>
-          <div class="border border-gray-200 rounded-xl p-4 bg-neutral-50">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
+          <h2 class="text-base font-semibold text-base-content mb-3">Lifestyle</h2>
+          <div class="border border-base-300 rounded-xl p-4 bg-base-100">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm text-base-content/80">
               {[
                 { label: 'Apple Store', key: 'Apple Store' },
                 { label: 'Costco', key: 'Costco' },
@@ -140,8 +140,8 @@ function costColor(tier: string): string {
                 { label: 'MANNER COFFEE', key: 'MANNER COFFEE' }
               ].map(({ label, key }) => (
                 <div>
-                  <p class="text-xs text-gray-400 m-0">{label}</p>
-                  <p class="text-gray-900 font-medium m-0">
+                  <p class="text-xs text-base-content/50 m-0">{label}</p>
+                  <p class="text-base-content font-medium m-0">
                     {lifestyle[key] || '—'}
                   </p>
                 </div>
@@ -155,11 +155,11 @@ function costColor(tier: string): string {
     {
       visa && (
         <section class="mb-8">
-          <h2 class="text-base font-semibold text-gray-900 mb-3">
+          <h2 class="text-base font-semibold text-base-content mb-3">
             Visa Policy
           </h2>
-          <div class="border border-gray-200 rounded-xl p-4 bg-neutral-50">
-            <p class="text-sm text-gray-700 m-0">{visa['Visa Policy']}</p>
+          <div class="border border-base-300 rounded-xl p-4 bg-base-100">
+            <p class="text-sm text-base-content/80 m-0">{visa['Visa Policy']}</p>
           </div>
         </section>
       )
@@ -168,10 +168,10 @@ function costColor(tier: string): string {
     {
       extra?.['Cultural Tags'] && (
         <section class="mb-8">
-          <h2 class="text-base font-semibold text-gray-900 mb-3">Cultural</h2>
+          <h2 class="text-base font-semibold text-base-content mb-3">Cultural</h2>
           <div class="flex flex-wrap gap-2">
             {extra['Cultural Tags'].split(',').map((tag: string) => (
-              <span class="text-xs text-gray-500 bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+              <span class="text-xs text-base-content/70 bg-base-200 border border-base-300 px-2.5 py-1 rounded-md">
                 {tag.trim()}
               </span>
             ))}
