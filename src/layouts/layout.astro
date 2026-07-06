@@ -62,33 +62,39 @@ const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p))
   <body class="antialiased leading-none text-base-content bg-base-200 pt-14">
     <nav
       id="navbar"
-      class="fixed top-0 left-0 right-0 z-50 h-14 transition-all duration-300 border-b border-transparent"
+      class="fixed top-0 left-0 right-0 z-50 h-14 transition-[background,border-color,box-shadow] duration-300 border-b border-transparent"
     >
       <div
         class="mx-auto max-w-2xl px-5 h-full flex items-center justify-between"
       >
         <a
           href="/"
-          class="text-sm font-semibold text-base-content hover:text-primary transition-colors"
-          class:list={{ 'text-primary': path === '/' }}
+          class="flex items-baseline gap-0.5 text-sm font-semibold tracking-tight"
         >
-          re://set
+          <span class="text-primary">re:</span>
+          <span class="text-base-content">set</span>
         </a>
-        <div class="flex items-center gap-6">
+        <div class="flex items-center gap-1.5">
           <a
             href="/companies"
-            class="text-sm text-base-content/70 hover:text-base-content transition-colors"
+            class="px-3 py-1.5 text-sm rounded-md transition-colors"
             class:list={{
-              'text-base-content font-medium': isActive('/companies')
+              'text-base-content font-medium bg-base-content/10':
+                isActive('/companies'),
+              'text-base-content/60 hover:text-base-content hover:bg-base-content/[0.06]':
+                !isActive('/companies')
             }}
           >
             公司
           </a>
           <a
             href="/livable"
-            class="text-sm text-base-content/70 hover:text-base-content transition-colors"
+            class="px-3 py-1.5 text-sm rounded-md transition-colors"
             class:list={{
-              'text-base-content font-medium': isActive('/livable')
+              'text-base-content font-medium bg-base-content/10':
+                isActive('/livable'),
+              'text-base-content/60 hover:text-base-content hover:bg-base-content/[0.06]':
+                !isActive('/livable')
             }}
           >
             城市
@@ -137,12 +143,19 @@ const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p))
     <style is:global>
       #navbar {
         background: transparent;
+        box-shadow: none;
       }
       #navbar.scrolled {
-        background: color-mix(in srgb, var(--color-base-100) 92%, transparent);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          color-mix(in srgb, var(--color-base-100) 92%, transparent) 100%
+        );
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         border-bottom-color: var(--color-base-300);
+        box-shadow: 0 1px 3px
+          color-mix(in srgb, var(--color-base-content) 6%, transparent);
       }
     </style>
     <script>

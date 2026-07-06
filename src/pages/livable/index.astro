@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/layout.astro'
 import RegionSection from '../../components/region-section.astro'
+import CityCard from '../../components/city-card.astro'
 import { getCollection } from 'astro:content'
 import { groupByRegion } from '../../utils/groupByRegion'
 import { loadCities, slugify } from '../../utils/citiesData'
@@ -26,18 +27,10 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
     </header>
 
     <div class="flex gap-2 mb-6" id="city-tabs">
-      <button
-        class="btn btn-soft btn-active rounded-full"
-        data-tab="global"
-        id="tab-global"
-      >
+      <button class="btn btn-soft btn-active" data-tab="global" id="tab-global">
         全球
       </button>
-      <button
-        class="btn btn-primary rounded-full"
-        data-tab="china"
-        id="tab-china"
-      >
+      <button class="btn btn-soft" data-tab="china" id="tab-china">
         中国内地
       </button>
     </div>
@@ -51,52 +44,14 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
             countLabel="cities"
           >
             {items.map((city) => (
-              <a
+              <CityCard
+                name={city.data.City}
+                location={city.data.Country}
                 href={`/livable/${slugify(city.data.City)}`}
-                class="card border border-base-300 rounded-xl p-4 transition-all duration-200 hover:border-primary hover:shadow-sm bg-base-100"
-              >
-                <div class="flex items-center gap-2.5 mb-2">
-                  <div class="w-8 h-8 mask mask-squircle bg-linear-to-br from-primary/10 to-primary/20 flex items-center justify-center text-sm font-bold text-primary shrink-0">
-                    {city.data.City[0]}
-                  </div>
-                  <div class="min-w-0">
-                    <h4 class="text-sm font-semibold text-base-content truncate m-0">
-                      {city.data.City}
-                    </h4>
-                    <p class="text-xs text-base-content/50 truncate">
-                      {city.data.Country}
-                    </p>
-                  </div>
-                </div>
-                <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-base-content/70 mt-1">
-                  <span class="inline-flex items-center gap-1">
-                    <span
-                      class="w-1.5 h-1.5 rounded-full"
-                      class:list={[
-                        city.data['Avg AQI'] <= 50
-                          ? 'bg-success'
-                          : city.data['Avg AQI'] <= 100
-                            ? 'bg-warning'
-                            : 'bg-error'
-                      ]}
-                    />
-                    AQI {city.data['Avg AQI']}
-                  </span>
-                  <span>{city.data['Temp Range']}</span>
-                  <span
-                    class="font-medium"
-                    class:list={[
-                      city.data['Cost Tier'] === 'Low'
-                        ? 'text-success'
-                        : city.data['Cost Tier'] === 'Mid'
-                          ? 'text-warning'
-                          : 'text-error'
-                    ]}
-                  >
-                    {city.data['Cost Tier']}
-                  </span>
-                </div>
-              </a>
+                avgAqi={Number(city.data['Avg AQI'])}
+                tempRange={city.data['Temp Range']}
+                costTier={city.data['Cost Tier']}
+              />
             ))}
           </RegionSection>
         ))
@@ -112,52 +67,14 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
             countLabel="cities"
           >
             {items.map((city) => (
-              <a
+              <CityCard
+                name={city.City}
+                location={city.Province}
                 href={`/livable/${slugify(city.City)}`}
-                class="card border border-base-300 rounded-xl p-4 transition-all duration-200 hover:border-primary hover:shadow-sm bg-base-100"
-              >
-                <div class="flex items-center gap-2.5 mb-2">
-                  <div class="w-8 h-8 rounded-full bg-linear-to-br from-primary/10 to-primary/20 flex items-center justify-center text-sm font-bold text-primary shrink-0">
-                    {city.City[0]}
-                  </div>
-                  <div class="min-w-0">
-                    <h4 class="text-sm font-semibold text-base-content truncate m-0">
-                      {city.City}
-                    </h4>
-                    <p class="text-xs text-base-content/50 truncate">
-                      {city.Province}
-                    </p>
-                  </div>
-                </div>
-                <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-base-content/70 mt-1">
-                  <span class="inline-flex items-center gap-1">
-                    <span
-                      class="w-1.5 h-1.5 rounded-full"
-                      class:list={[
-                        city['Avg AQI'] <= 50
-                          ? 'bg-success'
-                          : city['Avg AQI'] <= 100
-                            ? 'bg-warning'
-                            : 'bg-error'
-                      ]}
-                    />
-                    AQI {city['Avg AQI']}
-                  </span>
-                  <span>{city['Temp Range']}</span>
-                  <span
-                    class="font-medium"
-                    class:list={[
-                      city['Cost Tier'] === 'Low'
-                        ? 'text-success'
-                        : city['Cost Tier'] === 'Mid'
-                          ? 'text-warning'
-                          : 'text-error'
-                    ]}
-                  >
-                    {city['Cost Tier']}
-                  </span>
-                </div>
-              </a>
+                avgAqi={Number(city['Avg AQI'])}
+                tempRange={city['Temp Range']}
+                costTier={city['Cost Tier']}
+              />
             ))}
           </RegionSection>
         ))

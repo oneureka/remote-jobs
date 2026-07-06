@@ -1,0 +1,62 @@
+---
+interface Props {
+  name: string
+  location: string
+  href: string
+  avgAqi: number
+  tempRange: string
+  costTier: string
+}
+
+const { name, location, href, avgAqi, tempRange, costTier } = Astro.props
+---
+
+<a
+  href={href}
+  class="card border border-base-300 p-4 transition-all duration-200 hover:border-primary hover:shadow-sm bg-base-100"
+>
+  <div class="flex items-center gap-2.5 mb-3">
+    <div
+      class="w-8 h-8 mask mask-squircle bg-linear-to-br from-primary/10 to-primary/20 flex items-center justify-center text-sm font-bold text-primary shrink-0"
+    >
+      {name[0]}
+    </div>
+    <div class="min-w-0">
+      <h4 class="text-sm font-semibold text-base-content truncate m-0">
+        {name}
+      </h4>
+      <p class="text-xs text-base-content/50 truncate">
+        {location}
+      </p>
+    </div>
+  </div>
+  <div class="flex flex-wrap gap-x-3 gap-y-1 text-xs text-base-content/70">
+    <span class="inline-flex items-center gap-1">
+      <span
+        class="w-1.5 h-1.5 rounded-full"
+        class:list={[
+          avgAqi <= 50
+            ? 'bg-success'
+            : avgAqi <= 100
+              ? 'bg-warning'
+              : 'bg-error'
+        ]}></span>
+      AQI {avgAqi}
+    </span>
+    <span class="inline-flex items-center">
+      {tempRange}
+    </span>
+    <span
+      class="inline-flex items-center font-medium"
+      class:list={[
+        costTier === 'Low'
+          ? 'text-success'
+          : costTier === 'Mid'
+            ? 'text-warning'
+            : 'text-error'
+      ]}
+    >
+      {costTier}
+    </span>
+  </div>
+</a>
