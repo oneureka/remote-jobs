@@ -6,7 +6,10 @@ export interface Props {
   description?: string
 }
 
-const { title = 'Remote Jobs', description = 'Curated remote-friendly companies and job opportunities from around the world' } = Astro.props
+const {
+  title = 'Remote Jobs',
+  description = 'Curated remote-friendly companies and job opportunities from around the world'
+} = Astro.props
 const path = Astro.url.pathname
 const siteUrl = `https://remote-jobs.example.com${path}`
 const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p))
@@ -30,11 +33,29 @@ const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p))
     <style is:global>
       body {
         background-image:
-          linear-gradient(-90deg, color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px),
-          linear-gradient(color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px),
-          linear-gradient(-90deg, color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px),
-          linear-gradient(color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px);
-        background-size: 6px 6px, 6px 6px, 120px 120px, 120px 120px;
+          linear-gradient(
+            -90deg,
+            color-mix(in srgb, currentColor 2%, transparent) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            color-mix(in srgb, currentColor 2%, transparent) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            -90deg,
+            color-mix(in srgb, currentColor 2%, transparent) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            color-mix(in srgb, currentColor 2%, transparent) 1px,
+            transparent 1px
+          );
+        background-size:
+          6px 6px,
+          6px 6px,
+          120px 120px,
+          120px 120px;
       }
     </style>
   </head>
@@ -43,7 +64,9 @@ const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p))
       id="navbar"
       class="fixed top-0 left-0 right-0 z-50 h-14 transition-all duration-300 border-b border-transparent"
     >
-      <div class="mx-auto max-w-2xl px-5 h-full flex items-center justify-between">
+      <div
+        class="mx-auto max-w-2xl px-5 h-full flex items-center justify-between"
+      >
         <a
           href="/"
           class="text-sm font-semibold text-base-content hover:text-primary transition-colors"
@@ -55,14 +78,18 @@ const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p))
           <a
             href="/companies"
             class="text-sm text-base-content/70 hover:text-base-content transition-colors"
-            class:list={{ 'text-base-content font-medium': isActive('/companies') }}
+            class:list={{
+              'text-base-content font-medium': isActive('/companies')
+            }}
           >
             公司
           </a>
           <a
             href="/livable"
             class="text-sm text-base-content/70 hover:text-base-content transition-colors"
-            class:list={{ 'text-base-content font-medium': isActive('/livable') }}
+            class:list={{
+              'text-base-content font-medium': isActive('/livable')
+            }}
           >
             城市
           </a>

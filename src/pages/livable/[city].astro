@@ -34,10 +34,15 @@ function costColor(tier: string): string {
 }
 ---
 
-<Layout title={`${cityName} — Remote Jobs`} description={`${cityName} — ${isGlobal ? cityData?.Country : cityData?.Province}. AQI ${cityData?.['Avg AQI']}, Cost: ${cityData?.['Cost Tier']}`}>
+<Layout
+  title={`${cityName} — Remote Jobs`}
+  description={`${cityName} — ${isGlobal ? cityData?.Country : cityData?.Province}. AQI ${cityData?.['Avg AQI']}, Cost: ${cityData?.['Cost Tier']}`}
+>
   <div class="mx-auto max-w-2xl px-5">
     <header class="pt-7.5">
-      <a href="/livable" class="text-xs text-base-content/50 hover:text-base-content/70"
+      <a
+        href="/livable"
+        class="text-xs text-base-content/50 hover:text-base-content/70"
         >&larr; Livable Cities</a
       >
     </header>
@@ -50,7 +55,9 @@ function costColor(tier: string): string {
           {cityName[0]}
         </div>
         <div>
-          <h1 class="text-2xl font-semibold text-base-content m-0">{cityName}</h1>
+          <h1 class="text-2xl font-semibold text-base-content m-0">
+            {cityName}
+          </h1>
           <p class="text-sm text-base-content/50 m-0">
             {isGlobal ? cityData!.Country : cityData!.Province}
           </p>
@@ -106,7 +113,9 @@ function costColor(tier: string): string {
     {
       climate && (
         <section class="mb-8">
-          <h2 class="text-base font-semibold text-base-content mb-3">Climate</h2>
+          <h2 class="text-base font-semibold text-base-content mb-3">
+            Climate
+          </h2>
           <div class="border border-base-300 rounded-xl p-4 bg-base-100">
             <p class="text-sm text-base-content/80 m-0">
               <span class="font-medium">{climate['Climate Type']}</span>
@@ -128,7 +137,9 @@ function costColor(tier: string): string {
     {
       lifestyle && (
         <section class="mb-8">
-          <h2 class="text-base font-semibold text-base-content mb-3">Lifestyle</h2>
+          <h2 class="text-base font-semibold text-base-content mb-3">
+            Lifestyle
+          </h2>
           <div class="border border-base-300 rounded-xl p-4 bg-base-100">
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm text-base-content/80">
               {[
@@ -159,7 +170,9 @@ function costColor(tier: string): string {
             Visa Policy
           </h2>
           <div class="border border-base-300 rounded-xl p-4 bg-base-100">
-            <p class="text-sm text-base-content/80 m-0">{visa['Visa Policy']}</p>
+            <p class="text-sm text-base-content/80 m-0">
+              {visa['Visa Policy']}
+            </p>
           </div>
         </section>
       )
@@ -168,7 +181,9 @@ function costColor(tier: string): string {
     {
       extra?.['Cultural Tags'] && (
         <section class="mb-8">
-          <h2 class="text-base font-semibold text-base-content mb-3">Cultural</h2>
+          <h2 class="text-base font-semibold text-base-content mb-3">
+            Cultural
+          </h2>
           <div class="flex flex-wrap gap-2">
             {extra['Cultural Tags'].split(',').map((tag: string) => (
               <span class="text-xs text-base-content/70 bg-base-200 border border-base-300 px-2.5 py-1 rounded-md">

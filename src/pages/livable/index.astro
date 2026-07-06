@@ -11,7 +11,10 @@ const globalGroups = groupByRegion(globalCities, (c) => c.data.Region)
 const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
 ---
 
-<Layout title="Livable Cities — Remote Jobs" description="Discover cities for digital nomads">
+<Layout
+  title="Livable Cities — Remote Jobs"
+  description="Discover cities for digital nomads"
+>
   <div class="mx-auto max-w-2xl px-5">
     <header class="pt-7.5">
       <div class="mb-2">
@@ -23,10 +26,18 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
     </header>
 
     <div class="flex gap-2 mb-6" id="city-tabs">
-      <button class="btn btn-soft btn-active rounded-full" data-tab="global" id="tab-global">
+      <button
+        class="btn btn-soft btn-active rounded-full"
+        data-tab="global"
+        id="tab-global"
+      >
         全球
       </button>
-      <button class="btn btn-primary rounded-full" data-tab="china" id="tab-china">
+      <button
+        class="btn btn-primary rounded-full"
+        data-tab="china"
+        id="tab-china"
+      >
         中国内地
       </button>
     </div>
@@ -163,9 +174,17 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
     const tab = btn.getAttribute('data-tab')
     const isGlobal = tab === 'global'
 
-    document.getElementById('city-list-global').classList.toggle('hidden', !isGlobal)
-    document.getElementById('city-list-china').classList.toggle('hidden', isGlobal)
-    document.getElementById('tab-global').classList.toggle('btn-active', isGlobal)
-    document.getElementById('tab-china').classList.toggle('btn-active', !isGlobal)
+    document
+      .getElementById('city-list-global')
+      .classList.toggle('hidden', !isGlobal)
+    document
+      .getElementById('city-list-china')
+      .classList.toggle('hidden', isGlobal)
+    document
+      .getElementById('tab-global')
+      .classList.toggle('btn-active', isGlobal)
+    document
+      .getElementById('tab-china')
+      .classList.toggle('btn-active', !isGlobal)
   })
 </script>

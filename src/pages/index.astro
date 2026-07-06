@@ -4,7 +4,10 @@ import JobCard from '@components/job-card.astro'
 import jobs from '../data.json'
 ---
 
-<Layout title="Remote Jobs" description="Curated remote-friendly companies and job opportunities from around the world">
+<Layout
+  title="Remote Jobs"
+  description="Curated remote-friendly companies and job opportunities from around the world"
+>
   <div class="mx-auto max-w-2xl px-5">
     <header class="pt-7.5">
       <div class="mb-2">
@@ -16,23 +19,16 @@ import jobs from '../data.json'
     </header>
 
     <div id="job-list" class="my-6">
-      {
-        jobs.map((job, i) => (
-          <JobCard job={job} index={i} />
-        ))
-      }
+      {jobs.map((job, i) => <JobCard job={job} index={i} />)}
     </div>
 
     <div class="flex justify-center pb-14">
-      <button id="load-more" class="btn btn-neutral">
-        Load more
-      </button>
+      <button id="load-more" class="btn btn-neutral"> Load more </button>
     </div>
   </div>
 </Layout>
 
-<style is:global>
-</style>
+<style is:global></style>
 
 <script>
   document.getElementById('load-more')?.addEventListener('click', () => {})

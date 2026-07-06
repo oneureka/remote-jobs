@@ -9,7 +9,10 @@ const allRegions = [...new Set(companies.map((c) => c.data.region))]
 const groups = groupByRegion(companies, (c) => c.data.region)
 ---
 
-<Layout title="Companies — Remote Jobs" description="Remote-friendly companies by region">
+<Layout
+  title="Companies — Remote Jobs"
+  description="Remote-friendly companies by region"
+>
   <div class="mx-auto max-w-2xl px-5">
     <header class="pt-7.5">
       <div class="mb-2">
