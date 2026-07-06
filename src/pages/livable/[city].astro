@@ -1,0 +1,183 @@
+---
+import Layout from '@layouts/layout.astro'
+import { loadCities, getAllCityParams, deslugify } from '../../utils/citiesData'
+
+const { globalExtra, climateData, lifestyleData, visaData, allCities } =
+  loadCities()
+
+export async function getStaticPaths() {
+  return getAllCityParams()
+}
+
+const { city } = Astro.params
+const cityName = deslugify(city!)
+const cityData = allCities.find((c) => c.City === cityName)
+const extra = globalExtra.find((e) => e.City === cityName)
+const climate = climateData.find((c) => c.City === cityName)
+const lifestyle = lifestyleData.find((l) => l.City === cityName)
+const visa = cityData?.Country
+  ? visaData.find((v) => v.Country === cityData.Country)
+  : null
+
+const isGlobal = cityData?._source === 'global'
+
+function aqiColor(aqi: number): string {
+  if (aqi <= 50) return 'bg-green-400'
+  if (aqi <= 100) return 'bg-yellow-400'
+  return 'bg-red-400'
+}
+
+function costColor(tier: string): string {
+  if (tier === 'Low') return 'text-green-600'
+  if (tier === 'Medium' || tier === 'Mid') return 'text-yellow-600'
+  return 'text-red-600'
+}
+---
+
+<Layout>
+  <div class="mx-auto max-w-2xl px-5">
+    <header class="pt-7.5">
+      <a href="/livable" class="text-xs text-gray-400 hover:text-gray-600"
+        >&larr; Livable Cities</a
+      >
+    </header>
+
+    <div class="mt-4 mb-8">
+      <div class="flex items-center gap-3 mb-2">
+        <div
+          class="w-10 h-10 rounded-full bg-linear-to-br from-yellow-100 to-yellow-200 flex items-center justify-center text-lg font-bold text-yellow-700 shrink-0"
+        >
+          {cityName[0]}
+        </div>
+        <div>
+          <h1 class="text-2xl font-semibold text-gray-900 m-0">{cityName}</h1>
+          <p class="text-sm text-gray-400 m-0">
+            {isGlobal ? cityData!.Country : cityData!.Province}
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2 text-xs">
+        {
+          cityData && (
+            <>
+              <span class="inline-flex items-center gap-1 bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+                <span
+                  class={`w-2 h-2 rounded-full ${aqiColor(Number(cityData['Avg AQI']))}`}
+                />
+                AQI {cityData['Avg AQI']}
+              </span>
+              <span class="bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+                {cityData['Temp Range']}
+              </span>
+              <span
+                class={`bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md font-medium ${costColor(cityData['Cost Tier'])}`}
+              >
+                {cityData['Cost Tier']}
+              </span>
+              {cityData['Min Wage'] && (
+                <span class="bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+                  Min Wage: {cityData['Min Wage']}
+                </span>
+              )}
+              {cityData.Region && (
+                <span class="bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+                  {cityData.Region}
+                </span>
+              )}
+            </>
+          )
+        }
+        {
+          extra && (
+            <>
+              <span class="bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+                Safety: {extra['Safety Index']}
+              </span>
+              <span class="bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+                EPI: {extra['EF EPI Band']}
+              </span>
+            </>
+          )
+        }
+      </div>
+    </div>
+
+    {
+      climate && (
+        <section class="mb-8">
+          <h2 class="text-base font-semibold text-gray-900 mb-3">Climate</h2>
+          <div class="border border-gray-200 rounded-xl p-4 bg-neutral-50">
+            <p class="text-sm text-gray-700 m-0">
+              <span class="font-medium">{climate['Climate Type']}</span>
+              {climate['Climate Desc'] && (
+                <> &mdash; {climate['Climate Desc']}</>
+              )}
+            </p>
+            {climate['Climate Disaster Risk'] &&
+              climate['Climate Disaster Risk'] !== 'N/A' && (
+                <p class="text-xs text-gray-400 mt-1.5 m-0">
+                  Disaster risk: {climate['Climate Disaster Risk']}
+                </p>
+              )}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      lifestyle && (
+        <section class="mb-8">
+          <h2 class="text-base font-semibold text-gray-900 mb-3">Lifestyle</h2>
+          <div class="border border-gray-200 rounded-xl p-4 bg-neutral-50">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
+              {[
+                { label: 'Apple Store', key: 'Apple Store' },
+                { label: 'Costco', key: 'Costco' },
+                { label: "Sam's Club", key: "Sam's Club" },
+                { label: 'IKEA', key: 'IKEA' },
+                { label: 'MUJI', key: 'MUJI' },
+                { label: 'MANNER COFFEE', key: 'MANNER COFFEE' }
+              ].map(({ label, key }) => (
+                <div>
+                  <p class="text-xs text-gray-400 m-0">{label}</p>
+                  <p class="text-gray-900 font-medium m-0">
+                    {lifestyle[key] || '—'}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      visa && (
+        <section class="mb-8">
+          <h2 class="text-base font-semibold text-gray-900 mb-3">
+            Visa Policy
+          </h2>
+          <div class="border border-gray-200 rounded-xl p-4 bg-neutral-50">
+            <p class="text-sm text-gray-700 m-0">{visa['Visa Policy']}</p>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      extra?.['Cultural Tags'] && (
+        <section class="mb-8">
+          <h2 class="text-base font-semibold text-gray-900 mb-3">Cultural</h2>
+          <div class="flex flex-wrap gap-2">
+            {extra['Cultural Tags'].split(',').map((tag: string) => (
+              <span class="text-xs text-gray-500 bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-md">
+                {tag.trim()}
+              </span>
+            ))}
+          </div>
+        </section>
+      )
+    }
+  </div>
+</Layout>

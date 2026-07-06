@@ -1,75 +1,158 @@
 ---
-import Layout from '../../layouts/Layout.astro'
+import Layout from '@layouts/layout.astro'
 import RegionSection from '../../components/RegionSection.astro'
 import { getCollection } from 'astro:content'
 import { groupByRegion } from '../../utils/groupByRegion'
+import { loadCities } from '../../utils/citiesData'
 
-const cities = await getCollection('cities')
-
-const groups = groupByRegion(cities, (c) => c.data.Region)
+const { chinaCities } = loadCities()
+const globalCities = await getCollection('cities')
+const globalGroups = groupByRegion(globalCities, (c) => c.data.Region)
+const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
 ---
 
 <Layout>
-  <div class="mx-auto max-w-[1200px] px-5">
-    <header class="pt-[30px]">
-      <div class="mb-5">
+  <div class="mx-auto max-w-2xl px-5">
+    <header class="pt-7.5">
+      <div class="mb-2">
         <h2 class="text-2xl leading-9">Livable Cities</h2>
-        <h3 class="text-slate-500 text-2xl leading-8 font-medium">
+        <p class="text-sm text-gray-400 mt-1">
           Discover cities for digital nomads
-        </h3>
+        </p>
       </div>
     </header>
 
-    {
-      groups.map(({ region, items }) => (
-        <RegionSection region={region} count={items.length} countLabel="cities">
-          {items.map((city) => (
-            <div class="card border border-slate-200 rounded-xl p-4 transition-all duration-200 hover:border-blue-400 hover:shadow-sm bg-white">
-              <div class="flex items-center gap-2.5 mb-2">
-                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-sm font-bold text-blue-600 shrink-0">
-                  {city.data.City[0]}
+    <div class="flex gap-2 mb-6" id="city-tabs">
+      <button
+        class="btn btn-soft btn-active rounded-full"
+        onclick="document.getElementById('city-list-global').classList.remove('hidden');document.getElementById('city-list-china').classList.add('hidden');document.getElementById('tab-global').classList.add('btn-active');document.getElementById('tab-china').classList.remove('btn-active')"
+        id="tab-global"
+      >
+        全球
+      </button>
+      <button
+        class="btn btn-primary rounded-full"
+        onclick="document.getElementById('city-list-china').classList.remove('hidden');document.getElementById('city-list-global').classList.add('hidden');document.getElementById('tab-china').classList.add('btn-active');document.getElementById('tab-global').classList.remove('btn-active')"
+        id="tab-china"
+      >
+        中国内地
+      </button>
+    </div>
+
+    <div id="city-list-global">
+      {
+        globalGroups.map(({ region, items }) => (
+          <RegionSection
+            region={region}
+            count={items.length}
+            countLabel="cities"
+          >
+            {items.map((city) => (
+              <div class="card border border-gray-200 rounded-xl p-4 transition-all duration-200 hover:border-yellow-400 hover:shadow-sm bg-neutral-50">
+                <div class="flex items-center gap-2.5 mb-2">
+                  <div class="w-8 h-8 mask mask-squircle bg-linear-to-br from-yellow-100 to-yellow-200 flex items-center justify-center text-sm font-bold text-yellow-700 shrink-0">
+                    {city.data.City[0]}
+                  </div>
+                  <div class="min-w-0">
+                    <h4 class="text-sm font-semibold text-gray-900 truncate m-0">
+                      {city.data.City}
+                    </h4>
+                    <p class="text-xs text-gray-400 truncate">
+                      {city.data.Country}
+                    </p>
+                  </div>
                 </div>
-                <div class="min-w-0">
-                  <h4 class="text-sm font-semibold text-gray-900 truncate m-0">
-                    {city.data.City}
-                  </h4>
-                  <p class="text-xs text-slate-400 truncate">
-                    {city.data.Country}
-                  </p>
-                </div>
-              </div>
-              <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-slate-500 mt-1">
-                <span class="inline-flex items-center gap-1">
+                <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-gray-500 mt-1">
+                  <span class="inline-flex items-center gap-1">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full"
+                      class:list={[
+                        city.data['Avg AQI'] <= 50
+                          ? 'bg-green-400'
+                          : city.data['Avg AQI'] <= 100
+                            ? 'bg-yellow-400'
+                            : 'bg-red-400'
+                      ]}
+                    />
+                    AQI {city.data['Avg AQI']}
+                  </span>
+                  <span>{city.data['Temp Range']}</span>
                   <span
-                    class="w-1.5 h-1.5 rounded-full"
+                    class="font-medium"
                     class:list={[
-                      city.data['Avg AQI'] <= 50
-                        ? 'bg-green-400'
-                        : city.data['Avg AQI'] <= 100
-                          ? 'bg-yellow-400'
-                          : 'bg-red-400'
+                      city.data['Cost Tier'] === 'Low'
+                        ? 'text-green-600'
+                        : city.data['Cost Tier'] === 'Mid'
+                          ? 'text-yellow-600'
+                          : 'text-red-600'
                     ]}
-                  />
-                  AQI {city.data['Avg AQI']}
-                </span>
-                <span>{city.data['Temp Range']}</span>
-                <span
-                  class="font-medium"
-                  class:list={[
-                    city.data['Cost Tier'] === 'Low'
-                      ? 'text-green-600'
-                      : city.data['Cost Tier'] === 'Mid'
-                        ? 'text-yellow-600'
-                        : 'text-red-600'
-                  ]}
-                >
-                  {city.data['Cost Tier']}
-                </span>
+                  >
+                    {city.data['Cost Tier']}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
-        </RegionSection>
-      ))
-    }
+            ))}
+          </RegionSection>
+        ))
+      }
+    </div>
+
+    <div id="city-list-china" class="hidden">
+      {
+        chinaGroups.map(({ region, items }) => (
+          <RegionSection
+            region={region}
+            count={items.length}
+            countLabel="cities"
+          >
+            {items.map((city) => (
+              <div class="card border border-gray-200 rounded-xl p-4 transition-all duration-200 hover:border-yellow-400 hover:shadow-sm bg-neutral-50">
+                <div class="flex items-center gap-2.5 mb-2">
+                  <div class="w-8 h-8 rounded-full bg-linear-to-br from-yellow-100 to-yellow-200 flex items-center justify-center text-sm font-bold text-yellow-700 shrink-0">
+                    {city.City[0]}
+                  </div>
+                  <div class="min-w-0">
+                    <h4 class="text-sm font-semibold text-gray-900 truncate m-0">
+                      {city.City}
+                    </h4>
+                    <p class="text-xs text-gray-400 truncate">
+                      {city.Province}
+                    </p>
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-gray-500 mt-1">
+                  <span class="inline-flex items-center gap-1">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full"
+                      class:list={[
+                        city['Avg AQI'] <= 50
+                          ? 'bg-green-400'
+                          : city['Avg AQI'] <= 100
+                            ? 'bg-yellow-400'
+                            : 'bg-red-400'
+                      ]}
+                    />
+                    AQI {city['Avg AQI']}
+                  </span>
+                  <span>{city['Temp Range']}</span>
+                  <span
+                    class="font-medium"
+                    class:list={[
+                      city['Cost Tier'] === 'Low'
+                        ? 'text-green-600'
+                        : city['Cost Tier'] === 'Mid'
+                          ? 'text-yellow-600'
+                          : 'text-red-600'
+                    ]}
+                  >
+                    {city['Cost Tier']}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </RegionSection>
+        ))
+      }
+    </div>
   </div>
 </Layout>

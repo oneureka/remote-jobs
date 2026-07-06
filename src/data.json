@@ -1,0 +1,110 @@
+[
+  {
+    "company": "Anomaly",
+    "position": "Software Engineer",
+    "location": "Remote (Global)",
+    "salary": "$120-180K",
+    "tags": ["Developer Tools", "AI"],
+    "posted": "2 days ago",
+    "url": "https://anoma.ly/careers"
+  },
+  {
+    "company": "1Password",
+    "position": "Senior Developer",
+    "location": "Remote (NA)",
+    "salary": "$150-200K",
+    "tags": ["Security", "Password Manager"],
+    "posted": "1 week ago",
+    "url": "https://1password.com/jobs"
+  },
+  {
+    "company": "37signals",
+    "position": "Design Engineer",
+    "location": "Remote (Global)",
+    "salary": "$140-190K",
+    "tags": ["Web Software"],
+    "posted": "3 days ago",
+    "url": "https://37signals.com/jobs"
+  },
+  {
+    "company": "Basecamp",
+    "position": "Product Designer",
+    "location": "Remote (Global)",
+    "salary": "$130-170K",
+    "tags": ["Project Management"],
+    "posted": "1 week ago",
+    "url": "https://basecamp.com/jobs"
+  },
+  {
+    "company": "GitHub",
+    "position": "Software Engineer",
+    "location": "Remote (US)",
+    "salary": "$160-220K",
+    "tags": ["Developer Tools", "Platform"],
+    "posted": "5 days ago",
+    "url": "https://github.com/about/careers"
+  },
+  {
+    "company": "Stripe",
+    "position": "Backend Engineer",
+    "location": "Remote (Global)",
+    "salary": "$170-240K",
+    "tags": ["Payments", "Fintech"],
+    "posted": "2 weeks ago",
+    "url": "https://stripe.com/jobs"
+  },
+  {
+    "company": "Vercel",
+    "position": "Design Engineer",
+    "location": "Remote (Global)",
+    "salary": "$150-210K",
+    "tags": ["Cloud", "Frontend"],
+    "posted": "4 days ago",
+    "url": "https://vercel.com/careers"
+  },
+  {
+    "company": "Supabase",
+    "position": "Full-Stack Engineer",
+    "location": "Remote (Global)",
+    "salary": "$130-190K",
+    "tags": ["Backend-as-a-Service", "Database"],
+    "posted": "1 week ago",
+    "url": "https://supabase.com/careers"
+  },
+  {
+    "company": "Linear",
+    "position": "Frontend Engineer",
+    "location": "Remote (Global)",
+    "salary": "$140-200K",
+    "tags": ["Developer Tools", "Project Management"],
+    "posted": "6 days ago",
+    "url": "https://linear.app/careers"
+  },
+  {
+    "company": "Cloudflare",
+    "position": "Network Engineer",
+    "location": "Remote (Global)",
+    "salary": "$150-210K",
+    "tags": ["Cloud", "Security", "CDN"],
+    "posted": "2 weeks ago",
+    "url": "https://cloudflare.com/careers"
+  },
+  {
+    "company": "Deno",
+    "position": "Core Runtime Engineer",
+    "location": "Remote (Global)",
+    "salary": "$130-180K",
+    "tags": ["Developer Tools", "Runtime"],
+    "posted": "3 days ago",
+    "url": "https://deno.com/careers"
+  },
+  {
+    "company": "PostHog",
+    "position": "Full-Stack Engineer",
+    "location": "Remote (Global)",
+    "salary": "$120-170K",
+    "tags": ["Analytics", "Developer Tools"],
+    "posted": "1 week ago",
+    "url": "https://posthog.com/careers"
+  }
+]

@@ -1,0 +1,112 @@
+---
+import Layout from '@layouts/layout.astro'
+import RegionSection from '../../components/RegionSection.astro'
+import { getCollection } from 'astro:content'
+import { groupByRegion } from '../../utils/groupByRegion'
+
+const companies = await getCollection('companies')
+const allRegions = [...new Set(companies.map((c) => c.data.region))]
+const groups = groupByRegion(companies, (c) => c.data.region)
+---
+
+<Layout>
+  <div class="mx-auto max-w-2xl px-5">
+    <header class="pt-7.5">
+      <div class="mb-2">
+        <h2 class="text-2xl leading-9">Companies</h2>
+        <p class="text-sm text-gray-400 mt-1">
+          Remote-friendly companies by region
+        </p>
+      </div>
+    </header>
+
+    <div class="flex flex-wrap gap-2 mb-6" id="region-filters">
+      <button
+        class="btn btn-soft btn-active"
+        onclick="filterRegion('all')"
+        data-region="all"
+        id="filter-all"
+      >
+        All ({companies.length})
+      </button>
+      {
+        allRegions.map((region) => (
+          <button
+            class="btn btn-soft"
+            onclick={`filterRegion('${region.replace(/'/g, "\\'")}')`}
+            data-region={region}
+          >
+            {region} ({companies.filter((c) => c.data.region === region).length}
+            )
+          </button>
+        ))
+      }
+    </div>
+
+    {
+      groups.map(({ region, items }) => (
+        <div class="region-section" data-region={region}>
+          <RegionSection
+            region={region}
+            count={items.length}
+            countLabel="companies"
+          >
+            {items.map((company) => (
+              <a
+                href={`/companies/${company.id}`}
+                class="card border border-gray-200 rounded-xl p-4 transition-all duration-200 hover:border-yellow-400 hover:shadow-sm bg-neutral-50"
+              >
+                <div class="flex items-center gap-2.5 mb-2">
+                  <div class="w-8 h-8 rounded-full bg-linear-to-br from-yellow-100 to-yellow-200 flex items-center justify-center text-sm font-bold text-yellow-700 shrink-0">
+                    {company.data.companyName[0]}
+                  </div>
+                  <div class="min-w-0">
+                    <h4 class="text-sm font-semibold text-gray-900 truncate m-0">
+                      {company.data.companyName}
+                    </h4>
+                    <p class="text-xs text-gray-400 truncate">
+                      {company.data.industry[0]}
+                    </p>
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-gray-500 mt-1">
+                  {company.data.remotePolicy.map((p: string) => (
+                    <span class="text-yellow-600 font-medium">{p}</span>
+                  ))}
+                </div>
+              </a>
+            ))}
+          </RegionSection>
+        </div>
+      ))
+    }
+  </div>
+</Layout>
+
+<style is:global>
+  body {
+    background-image:
+      linear-gradient(-90deg, rgba(0,0,0,0.02) 1px, transparent 1px),
+      linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+      linear-gradient(-90deg, rgba(0,0,0,0.02) 1px, transparent 1px),
+      linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size: 6px 6px, 6px 6px, 120px 120px, 120px 120px;
+  }
+</style>
+
+<script>
+  function filterRegion(region) {
+    document.querySelectorAll('.region-section').forEach((el) => {
+      el.style.display =
+        region === 'all' || el.getAttribute('data-region') === region
+          ? ''
+          : 'none'
+    })
+    document.querySelectorAll('#region-filters .btn').forEach((btn) => {
+      const isActive =
+        btn.getAttribute('data-region') === region ||
+        (region === 'all' && btn.getAttribute('data-region') === 'all')
+      btn.classList.toggle('btn-active', isActive)
+    })
+  }
+</script>

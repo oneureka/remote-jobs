@@ -1,18 +1,54 @@
 ---
-import '../assets/app.css'
+import '@assets/globals.css'
 ---
 
 <!doctype html>
-<html data-theme="fantasy">
+<html data-theme="bumblebee">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
     <title>Remote Jobs</title>
   </head>
-  <body class="antialiased leading-none text-slate-600">
+  <body class="antialiased leading-none text-gray-900 bg-neutral-100">
     <slot />
+    <footer
+      class="mx-auto max-w-2xl px-5 py-8 text-center md:text-left text-xs text-gray-400"
+    >
+      <p class="m-0">
+        <a
+          href="/"
+          class="text-inherit underline underline-offset-2 hover:text-gray-600"
+          >Remote Jobs</a
+        >
+        &nbsp;—&nbsp;curated remote-friendly companies
+      </p>
+      <p class="m-0 mt-2">
+        Built with&nbsp;<a
+          href="https://astro.build"
+          class="text-inherit underline underline-offset-2 hover:text-gray-600"
+          target="_blank">Astro</a
+        >
+        &nbsp;·&nbsp;
+        <a
+          href="/jobs"
+          class="text-inherit underline underline-offset-2 hover:text-gray-600"
+          >Search Jobs</a
+        >
+        &nbsp;·&nbsp;
+        <a
+          href="/companies"
+          class="text-inherit underline underline-offset-2 hover:text-gray-600"
+          >Companies</a
+        >
+        &nbsp;·&nbsp;
+        <a
+          href="/livable"
+          class="text-inherit underline underline-offset-2 hover:text-gray-600"
+          >Livable Cities</a
+        >
+      </p>
+    </footer>
   </body>
 </html>

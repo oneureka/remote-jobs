@@ -1,55 +1,72 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import RegionSection from '../components/RegionSection.astro'
-import { getCollection } from 'astro:content'
-import { groupByRegion } from '../utils/groupByRegion'
-
-const companies = await getCollection('companies')
-
-const groups = groupByRegion(companies, (c) => c.data.region)
+import Layout from '@layouts/layout.astro'
+import jobs from '../data.json'
 ---
 
 <Layout>
-  <div class="mx-auto max-w-[1200px] px-5">
-    <header class="pt-[30px]">
-      <div class="mb-5">
-        <h2 class="text-2xl leading-9">Hey 👋</h2>
-        <h3 class="text-slate-500 text-2xl leading-8 font-medium">
-          Remote Jobs
-        </h3>
+  <div class="mx-auto max-w-2xl px-5">
+    <header class="pt-7.5">
+      <div class="mb-2">
+        <h2 class="text-2xl leading-9">Remote Jobs</h2>
+        <p class="text-sm text-gray-400 mt-1">
+          Curated remote-friendly companies and job opportunities
+        </p>
       </div>
     </header>
 
-    {
-      groups.map(({ region, items }) => (
-        <RegionSection region={region} count={items.length} countLabel="companies">
-          {
-            items.map((company) => (
-              <a
-                href={company.id}
-                class="card border border-slate-200 rounded-xl p-4 transition-all duration-200 hover:border-blue-400 hover:shadow-sm bg-white"
-              >
-                <div class="flex items-center gap-2.5 mb-2">
-                  <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-sm font-bold text-blue-600 shrink-0">
-                    {company.data.companyName[0]}
-                  </div>
-                  <div class="min-w-0">
-                    <h4 class="text-sm font-semibold text-gray-900 truncate m-0">{company.data.companyName}</h4>
-                    <p class="text-xs text-slate-400 truncate">{company.data.industry[0]}</p>
-                  </div>
+    <div id="job-list" class="my-6">
+      {
+        jobs.map((job, i) => (
+          <a
+            href={job.url}
+            target="_blank"
+            class="group grid grid-cols-[70px_1fr] items-center gap-4 w-full px-4 py-3 mb-2 border border-gray-200 rounded bg-neutral-50 hover:border-neutral-400 transition-all duration-200 overflow-hidden"
+            data-index={i}
+          >
+            <div class="w-17.5 h-17.5 bg-white rounded border border-gray-100 flex items-center justify-center shrink-0">
+              <div class="w-8 h-8 rounded-full bg-linear-to-br from-yellow-100 to-yellow-200 flex items-center justify-center text-sm font-bold text-yellow-700 group-hover:scale-105 transition-transform duration-200">
+                {job.company[0]}
+              </div>
+            </div>
+
+            <div class="relative min-w-0">
+              <div class="flex items-center justify-between">
+                <h3 class="text-base font-semibold text-gray-900 truncate m-0">
+                  {job.company}
+                </h3>
+                <p class="text-[11px] text-gray-400 shrink-0 ml-2">
+                  {job.posted}
+                </p>
+              </div>
+
+              <div class="md:flex md:items-center md:justify-between mt-0.5">
+                <p class="text-sm text-gray-500 m-0">{job.position}</p>
+                <div class="flex flex-wrap gap-1.5 mt-1 md:mt-0">
+                  <span class="text-[11px] text-gray-500 bg-gray-100 border border-gray-200 px-2 py-0.5 rounded-md leading-none">
+                    {job.location}
+                  </span>
+                  <span class="text-[11px] text-gray-500 bg-gray-100 border border-gray-200 px-2 py-0.5 rounded-md leading-none">
+                    {job.salary}
+                  </span>
                 </div>
-                <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-slate-500 mt-1">
-                  {
-                    company.data.remotePolicy.map((p: string) => (
-                      <span class="text-blue-600 font-medium">{p}</span>
-                    ))
-                  }
-                </div>
-              </a>
-            ))
-          }
-        </RegionSection>
-      ))
-    }
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="flex justify-center pb-14">
+      <button id="load-more" class="btn btn-neutral" onclick="loadMore()">
+        Load more
+      </button>
+    </div>
   </div>
 </Layout>
+
+<style is:global>
+</style>
+
+<script>
+  function loadMore() {}
+</script>

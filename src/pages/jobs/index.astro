@@ -1,0 +1,105 @@
+---
+import Layout from '@layouts/layout.astro'
+import jobs from '../../data.json'
+---
+
+<Layout>
+  <div class="mx-auto max-w-2xl px-5">
+    <header class="pt-7.5">
+      <div class="mb-2">
+        <h2 class="text-2xl leading-9">Search Jobs</h2>
+        <p class="text-sm text-gray-400 mt-1">
+          Find remote jobs by company, role, or keyword
+        </p>
+      </div>
+    </header>
+
+    <div class="mb-6">
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Search jobs..."
+        class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm text-gray-900 bg-neutral-50 focus:outline-none focus:border-yellow-400 transition-colors"
+        oninput="filterJobs(this.value)"
+      />
+    </div>
+
+    <div class="mb-2">
+      <span id="result-count" class="text-xs text-gray-400"
+        >{jobs.length} results</span
+      >
+    </div>
+
+    <div id="job-list" class="mb-14">
+      {
+        jobs.map((job, i) => (
+          <a
+            href={job.url}
+            target="_blank"
+            class="job-card group grid grid-cols-[70px_1fr] items-center gap-4 w-full px-4 py-3 mb-2 border border-gray-200 rounded-lg bg-neutral-50 hover:border-yellow-400 transition-all duration-200 overflow-hidden"
+            data-company={job.company.toLowerCase()}
+            data-position={job.position.toLowerCase()}
+            data-location={job.location.toLowerCase()}
+            data-tags={job.tags.join(' ').toLowerCase()}
+          >
+            <div class="w-[70px] h-[70px] bg-white rounded border border-gray-100 flex items-center justify-center shrink-0">
+              <div class="w-8 h-8 rounded-full bg-linear-to-br from-yellow-100 to-yellow-200 flex items-center justify-center text-sm font-bold text-yellow-700 group-hover:scale-105 transition-transform duration-200">
+                {job.company[0]}
+              </div>
+            </div>
+
+            <div class="relative min-w-0">
+              <div class="flex items-center justify-between">
+                <h3 class="text-base font-semibold text-gray-900 truncate m-0">
+                  {job.company}
+                </h3>
+                <p class="text-[11px] text-gray-400 shrink-0 ml-2">
+                  {job.posted}
+                </p>
+              </div>
+
+              <div class="md:flex md:items-center md:justify-between mt-0.5">
+                <p class="text-sm text-gray-500 m-0">{job.position}</p>
+                <div class="flex flex-wrap gap-1.5 mt-1 md:mt-0">
+                  <span class="text-[11px] text-gray-500 bg-gray-100 border border-gray-200 px-2 py-0.5 rounded-md leading-none">
+                    {job.location}
+                  </span>
+                  <span class="text-[11px] text-gray-500 bg-gray-100 border border-gray-200 px-2 py-0.5 rounded-md leading-none">
+                    {job.salary}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
+
+<script>
+  function filterJobs(query) {
+    const q = query.toLowerCase().trim()
+    const cards = document.querySelectorAll('.job-card')
+    let count = 0
+
+    cards.forEach((card) => {
+      const company = card.getAttribute('data-company')
+      const position = card.getAttribute('data-position')
+      const location = card.getAttribute('data-location')
+      const tags = card.getAttribute('data-tags')
+
+      const match =
+        !q ||
+        company.includes(q) ||
+        position.includes(q) ||
+        location.includes(q) ||
+        tags.includes(q)
+
+      card.style.display = match ? '' : 'none'
+      if (match) count++
+    })
+
+    document.getElementById('result-count').textContent = count + ' results'
+  }
+</script>
