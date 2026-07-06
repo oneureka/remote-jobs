@@ -1,59 +1,25 @@
 # Remote Jobs
 
-A curated directory of remote-friendly companies and livable cities for digital nomads. Built with [Astro](https://astro.build) + [Tailwind CSS](https://tailwindcss.com) + [daisyUI](https://daisyui.com).
+A curated directory of remote-friendly companies and livable cities for digital nomads.
 
-## Content
+Built with [Astro](https://astro.build) 7 · [Tailwind CSS](https://tailwindcss.com) 4 · [daisyUI](https://daisyui.com) 5 (bumblebee)
 
-### Companies (65)
+## Pages
 
-Company profiles with remote work policies, stored as Markdown files in `companies/`. Each entry includes:
-
-| Field | Description |
+| Route | Content |
 |---|---|
-| `companyName` | Company name |
-| `remotePolicy` | `Remote`, `Hybrid`, `Remote-Friendly`, or `On-site` |
-| `industry` | Industry categories |
-| `website` | Company URL |
-| `region` | Geographic region (North America, Europe, Asia) |
-| Body | Bilingual description (English + Chinese) |
+| `/` | Latest job listings |
+| `/jobs` | Search & filter jobs |
+| `/companies` | Companies grouped by region |
+| `/companies/:id` | Company detail with remote policy |
+| `/livable` | Global & China cities for nomads |
+| `/livable/:city` | City detail (climate, lifestyle, visa) |
 
-### Cities
+## Data Sources
 
-City data for digital nomads, stored as TSV files in `nomads/livable/`.
-
-| File | Rows | Description |
-|---|---|---|
-| `global.tsv` | 69 | Global cities with AQI, temperature, cost tier, min wage |
-| `china.tsv` | 101 | Chinese cities (same schema, includes "Very High" cost tier) |
-| `climate.tsv` | 170 | Climate type, description, and disaster risk |
-| `global_extra.tsv` | 69 | Environmental performance, safety index, cultural tags |
-| `lifestyle.tsv` | 101 | Store counts (Apple Store, Costco, IKEA, MUJI, etc.) |
-| `visa.tsv` | 26 | Visa policy by country |
-
-## Tech Stack
-
-- **Framework**: [Astro](https://astro.build) v7
-- **Styling**: [Tailwind CSS](https://tailwindcss.com) v4
-- **UI Library**: [daisyUI](https://daisyui.com) v5 (fantasy theme)
-- **Language**: TypeScript (strict mode)
-
-## Project Structure
-
-```
-src/
-├── assets/
-│   └── app.css                   # Tailwind + daisyUI config
-├── content.config.ts             # Content collection definitions
-├── layouts/
-│   └── Layout.astro              # Global layout
-├── pages/
-│   ├── index.astro               # Homepage — companies by region
-│   └── livable/
-│       └── index.astro           # Livable cities by region
-companies/                        # 65 company markdown files
-nomads/
-  └── livable/                    # City TSV datasets
-```
+- **Jobs** — `src/data.json` (inline listing)
+- **Companies** — `companies/*.md` (65 markdown profiles)
+- **Cities** — `nomads/livable/*.tsv` (global, china, climate, lifestyle, visa)
 
 ## Commands
 
@@ -63,4 +29,3 @@ nomads/
 | `npm run dev` | Start dev server at `localhost:4321` |
 | `npm run build` | Build to `./dist/` |
 | `npm run preview` | Preview production build |
-| `npm run astro` | Run Astro CLI |

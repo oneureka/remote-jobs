@@ -40,7 +40,8 @@ const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p))
   </head>
   <body class="antialiased leading-none text-base-content bg-base-200 pt-14">
     <nav
-      class="fixed top-0 left-0 right-0 z-50 h-14 bg-base-100/80 backdrop-blur-md border-b border-base-300"
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 h-14 transition-all duration-300 border-b border-transparent"
     >
       <div class="mx-auto max-w-2xl px-5 h-full flex items-center justify-between">
         <a
@@ -48,7 +49,7 @@ const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p))
           class="text-sm font-semibold text-base-content hover:text-primary transition-colors"
           class:list={{ 'text-primary': path === '/' }}
         >
-          Home
+          re://set
         </a>
         <div class="flex items-center gap-6">
           <a
@@ -106,5 +107,22 @@ const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p))
         >
       </p>
     </footer>
+    <style is:global>
+      #navbar {
+        background: transparent;
+      }
+      #navbar.scrolled {
+        background: color-mix(in srgb, var(--color-base-100) 92%, transparent);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom-color: var(--color-base-300);
+      }
+    </style>
+    <script>
+      const n = document.getElementById('navbar')
+      const update = () => n.classList.toggle('scrolled', window.scrollY > 0)
+      window.addEventListener('scroll', update, { passive: true })
+      update()
+    </script>
   </body>
 </html>
