@@ -1,18 +1,32 @@
 ---
 import '@assets/globals.css'
 
+export interface Props {
+  title?: string
+  description?: string
+}
+
+const { title = 'Remote Jobs', description = 'Curated remote-friendly companies and job opportunities from around the world' } = Astro.props
 const path = Astro.url.pathname
+const siteUrl = `https://remote-jobs.example.com${path}`
 const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p))
 ---
 
 <!doctype html>
-<html data-theme="bumblebee">
+<html lang="en" data-theme="bumblebee">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
-    <title>Remote Jobs</title>
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href={siteUrl} />
   </head>
   <body class="antialiased leading-none text-base-content bg-base-200 pt-14">
     <nav

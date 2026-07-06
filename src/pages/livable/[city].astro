@@ -34,7 +34,7 @@ function costColor(tier: string): string {
 }
 ---
 
-<Layout>
+<Layout title={`${cityName} — Remote Jobs`} description={`${cityName} — ${isGlobal ? cityData?.Country : cityData?.Province}. AQI ${cityData?.['Avg AQI']}, Cost: ${cityData?.['Cost Tier']}`}>
   <div class="mx-auto max-w-2xl px-5">
     <header class="pt-7.5">
       <a href="/livable" class="text-xs text-base-content/50 hover:text-base-content/70"

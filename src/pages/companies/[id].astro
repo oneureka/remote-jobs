@@ -14,7 +14,7 @@ const company = await getEntry('companies', id!)
 const { Content } = await render(company)
 ---
 
-<Layout>
+<Layout title={`${company.data.companyName} — Remote Jobs`} description={`${company.data.companyName} — ${company.data.region}. ${company.data.industry.join(', ')}`}>
   <div class="mx-auto max-w-2xl px-5">
     <header class="pt-7.5">
       <a href="/companies" class="text-xs text-base-content/50 hover:text-base-content/70"

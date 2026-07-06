@@ -3,7 +3,7 @@ import Layout from '@layouts/layout.astro'
 import RegionSection from '../../components/region-section.astro'
 import { getCollection } from 'astro:content'
 import { groupByRegion } from '../../utils/groupByRegion'
-import { loadCities } from '../../utils/citiesData'
+import { loadCities, slugify } from '../../utils/citiesData'
 
 const { chinaCities } = loadCities()
 const globalCities = await getCollection('cities')
@@ -11,7 +11,7 @@ const globalGroups = groupByRegion(globalCities, (c) => c.data.Region)
 const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
 ---
 
-<Layout>
+<Layout title="Livable Cities — Remote Jobs" description="Discover cities for digital nomads">
   <div class="mx-auto max-w-2xl px-5">
     <header class="pt-7.5">
       <div class="mb-2">
@@ -23,18 +23,10 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
     </header>
 
     <div class="flex gap-2 mb-6" id="city-tabs">
-      <button
-        class="btn btn-soft btn-active rounded-full"
-        onclick="document.getElementById('city-list-global').classList.remove('hidden');document.getElementById('city-list-china').classList.add('hidden');document.getElementById('tab-global').classList.add('btn-active');document.getElementById('tab-china').classList.remove('btn-active')"
-        id="tab-global"
-      >
+      <button class="btn btn-soft btn-active rounded-full" data-tab="global" id="tab-global">
         全球
       </button>
-      <button
-        class="btn btn-primary rounded-full"
-        onclick="document.getElementById('city-list-china').classList.remove('hidden');document.getElementById('city-list-global').classList.add('hidden');document.getElementById('tab-china').classList.add('btn-active');document.getElementById('tab-global').classList.remove('btn-active')"
-        id="tab-china"
-      >
+      <button class="btn btn-primary rounded-full" data-tab="china" id="tab-china">
         中国内地
       </button>
     </div>
@@ -48,7 +40,10 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
             countLabel="cities"
           >
             {items.map((city) => (
-              <div class="card border border-base-300 rounded-xl p-4 transition-all duration-200 hover:border-primary hover:shadow-sm bg-base-100">
+              <a
+                href={`/livable/${slugify(city.data.City)}`}
+                class="card border border-base-300 rounded-xl p-4 transition-all duration-200 hover:border-primary hover:shadow-sm bg-base-100"
+              >
                 <div class="flex items-center gap-2.5 mb-2">
                   <div class="w-8 h-8 mask mask-squircle bg-linear-to-br from-primary/10 to-primary/20 flex items-center justify-center text-sm font-bold text-primary shrink-0">
                     {city.data.City[0]}
@@ -90,7 +85,7 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
                     {city.data['Cost Tier']}
                   </span>
                 </div>
-              </div>
+              </a>
             ))}
           </RegionSection>
         ))
@@ -106,7 +101,10 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
             countLabel="cities"
           >
             {items.map((city) => (
-              <div class="card border border-base-300 rounded-xl p-4 transition-all duration-200 hover:border-primary hover:shadow-sm bg-base-100">
+              <a
+                href={`/livable/${slugify(city.City)}`}
+                class="card border border-base-300 rounded-xl p-4 transition-all duration-200 hover:border-primary hover:shadow-sm bg-base-100"
+              >
                 <div class="flex items-center gap-2.5 mb-2">
                   <div class="w-8 h-8 rounded-full bg-linear-to-br from-primary/10 to-primary/20 flex items-center justify-center text-sm font-bold text-primary shrink-0">
                     {city.City[0]}
@@ -148,7 +146,7 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
                     {city['Cost Tier']}
                   </span>
                 </div>
-              </div>
+              </a>
             ))}
           </RegionSection>
         ))
@@ -156,3 +154,18 @@ const chinaGroups = groupByRegion(chinaCities, (c) => c.Region)
     </div>
   </div>
 </Layout>
+
+<script>
+  document.getElementById('city-tabs')?.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-tab]')
+    if (!btn) return
+
+    const tab = btn.getAttribute('data-tab')
+    const isGlobal = tab === 'global'
+
+    document.getElementById('city-list-global').classList.toggle('hidden', !isGlobal)
+    document.getElementById('city-list-china').classList.toggle('hidden', isGlobal)
+    document.getElementById('tab-global').classList.toggle('btn-active', isGlobal)
+    document.getElementById('tab-china').classList.toggle('btn-active', !isGlobal)
+  })
+</script>
