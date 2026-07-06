@@ -21,21 +21,12 @@ const groups = groupByRegion(companies, (c) => c.data.region)
     </header>
 
     <div class="flex flex-wrap gap-2 mb-6" id="region-filters">
-      <button
-        class="btn btn-soft btn-active"
-        onclick="filterRegion('all')"
-        data-region="all"
-        id="filter-all"
-      >
+      <button class="btn btn-soft btn-active" data-region="all" id="filter-all">
         All ({companies.length})
       </button>
       {
         allRegions.map((region) => (
-          <button
-            class="btn btn-soft"
-            onclick={`filterRegion('${region.replace(/'/g, "\\'")}')`}
-            data-region={region}
-          >
+          <button class="btn btn-soft" data-region={region}>
             {region} ({companies.filter((c) => c.data.region === region).length}
             )
           </button>
@@ -83,30 +74,24 @@ const groups = groupByRegion(companies, (c) => c.data.region)
   </div>
 </Layout>
 
-<style is:global>
-  body {
-    background-image:
-      linear-gradient(-90deg, color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px),
-      linear-gradient(color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px),
-      linear-gradient(-90deg, color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px),
-      linear-gradient(color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px);
-    background-size: 6px 6px, 6px 6px, 120px 120px, 120px 120px;
-  }
-</style>
-
 <script>
-  function filterRegion(region) {
+  document.getElementById('region-filters')?.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-region]')
+    if (!btn) return
+
+    const region = btn.getAttribute('data-region')
+
     document.querySelectorAll('.region-section').forEach((el) => {
       el.style.display =
         region === 'all' || el.getAttribute('data-region') === region
           ? ''
           : 'none'
     })
-    document.querySelectorAll('#region-filters .btn').forEach((btn) => {
+    document.querySelectorAll('#region-filters .btn').forEach((b) => {
       const isActive =
-        btn.getAttribute('data-region') === region ||
-        (region === 'all' && btn.getAttribute('data-region') === 'all')
-      btn.classList.toggle('btn-active', isActive)
+        b.getAttribute('data-region') === region ||
+        (region === 'all' && b.getAttribute('data-region') === 'all')
+      b.classList.toggle('btn-active', isActive)
     })
-  }
+  })
 </script>

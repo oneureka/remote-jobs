@@ -21,7 +21,6 @@ import jobs from '../../data.json'
         type="text"
         placeholder="Search jobs..."
         class="w-full border border-base-300 rounded-lg px-4 py-2.5 text-sm text-base-content bg-base-100 focus:outline-none focus:border-primary transition-colors"
-        oninput="filterJobs(this.value)"
       />
     </div>
 
@@ -51,8 +50,8 @@ import jobs from '../../data.json'
 </Layout>
 
 <script>
-  function filterJobs(query) {
-    const q = query.toLowerCase().trim()
+  document.getElementById('search-input')?.addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase().trim()
     const cards = document.querySelectorAll('.job-card')
     let count = 0
 
@@ -74,5 +73,5 @@ import jobs from '../../data.json'
     })
 
     document.getElementById('result-count').textContent = count + ' results'
-  }
+  })
 </script>

@@ -27,6 +27,16 @@ const isActive = (p: string) => path === p || (p !== '/' && path.startsWith(p))
     <meta property="og:url" content={siteUrl} />
     <meta name="twitter:card" content="summary" />
     <link rel="canonical" href={siteUrl} />
+    <style is:global>
+      body {
+        background-image:
+          linear-gradient(-90deg, color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px),
+          linear-gradient(color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px),
+          linear-gradient(-90deg, color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px),
+          linear-gradient(color-mix(in srgb, currentColor 2%, transparent) 1px, transparent 1px);
+        background-size: 6px 6px, 6px 6px, 120px 120px, 120px 120px;
+      }
+    </style>
   </head>
   <body class="antialiased leading-none text-base-content bg-base-200 pt-14">
     <nav
